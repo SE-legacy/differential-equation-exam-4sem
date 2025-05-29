@@ -112,3 +112,95 @@ _Считаем, что $y = y(x)$, $N(x, y) != 0$_
 + Решаем @overall_solution_full_diff относительно $y$ и находим общее решение $ y = Phi(x, c) $
 
 #underline[Замечание:] Найти $y$ в явном виде возможно не всегда. В таком случае записывается общее решение в неявном виде, коим является @overall_solution_full_diff
+
+==== Основная теорема существования и единственности (1 - 3 этапы)
+
+Рассмотрим ДУ вида $y' = f(x, y)$ и соответствующую ей задачу Коши. Предположим, что $f(x, y)$ и $(diff f(x, y)) / (diff y)$ непрерывные функции. Тогда задача Коши имеет единственное решение.
+
+*1 этап: Сведение задачи Коши к интегральному уравнению*
+Пусть $phi(x)$ --- решение задачи Коши: $phi'(x) = f(x, phi(x))$ или $phi'(t) equiv f(t, phi(t))$
+
+Продифференцируем от $x_0$ до $x$ по $t$, $x$ --- фиксированная точка из $[a, b]$:
+
+$ phi(x) - underbrace(phi(x_0), y_0) = limits(integral)_(x_0)^x f(t, phi(t)) d t \
+phi(x) equiv y_0 + limits(integral)_(x_0)^x f(t, phi(t)) d t $ <eq_2_13_1>
+
+Тождество @eq_2_13_1 означает, что $phi(x)$ по определению является решением следующего интегрального уравнения:
+
+$ y(x) = y_0 + limits(integral)_(x_0)^x f(t, y(t)) d t, space a <= x <= b $ <eq_2_13_2>
+
+Вывод: любое решение задачи коши является решением  @eq_2_13_2
+
+*2 этап: Решение @eq_2_13_2*
+
+Строится последовательность функций
+
+$phi_0(x) equiv y_0, space phi(x) = y_0 + limits(integral)_(x_0)^x f(t, phi_0(t)) d t \ 
+phi_2(x) = y_0 + limits(integral)_(x_0)^x f(t, phi(t)) d t, \
+phi_(n + 1) (x) = y_0 + limits(integral)_(x_0)^x f(t, phi_(n(t))) d t $
+
+Получаем последовательность непрерывных функций:
+$ phi_0(x), phi_1(x), ..., phi_(n + 1)(x) $ <eq_2_13_3>
+
+Доказывается, что 
+
+$ forall x exists limits(lim)_(n -> infinity) phi_n(x) = phi(x)$
+
+Рассмотрим @eq_2_13_3 
+
+$ phi_(n + 1) (x) = y_0 + limits(integral)_(x_0)^x f(t, phi_n(t)) d t $
+
+При $n -> infinity$ получаем уравнение:
+
+$ phi(x) = y_0 + limits(integral)_(x_0)^x f(t, phi(t)) d t $
+
+Следовательно в пределе получаем:
+
+$phi(x) equiv y_0 + limits(integral)_(x_0)^x f(t, phi(t)) d t =>$ решение $phi(x)$ --- решение @eq_2_13_2
+
+*Этап 3: Доказательство единственности решения*
+
+Имеем, что $phi(x)$ --- решение @eq_2_13_2. От противного, пусть $phi_1(x)$ --- тоже решение, т.е.
+
+$ phi(x) - phi_1(x) = limits(integral)_(x_0)^x [f(t, phi(t)) - f(t, phi_1(t))] d t $ <eq_2_13_4>
+
+_Теорема о среднем_ Если g(x) --- дифференцируемая функция, то 
+$ g(x_1) - g(x_2) = g'(xi)(x_1 - x_2) $
+где $xi$ --- какая-то точка между $x_1$ и $x_2$
+
+Применяем эту теорему к @eq_2_13_4
+
+$ phi(x) - phi_1(x) = limits(integral)_(x_0)^x (diff f(t, xi(t))) / (diff y) (phi(t) - phi_1(t)) d t $
+где $xi(t)$ --- между $phi(t)$ и $phi_1(t)$
+
+
+ $ abs(phi(x) - phi_1(x)) = abs(limits(integral)_(x_0)^x (diff f(t, xi(t))) / (diff y) (phi(t) - phi_1(t)) d t) $
+
+Предположим, для определенности, что $x_0 <= x <= b$, тогда вспомним, что $abs(limits(integral)_(x_0)^b F(x)) <= limits(integral)_(x_0)^b abs(F(x))$. Получим:
+
+ $ abs(phi(x) - phi_1(x)) = limits(integral)_(x_0)^x underbrace(abs((diff f(t, xi(t))) / (diff y)), <= M --- "const") abs((phi(t) - phi_1(t))) d t $
+
+ $ u(x) <= M limits(integral)_(x_0)^x underbrace(u(t), <= m) d t $
+
+ $ x_0 <= x <= b $
+
+ Обозначим за $m = limits(max)_(x_0 <= x <= b) (u(x))$. Тогда получим:
+
+ $ u(x) <= M m limits(integral)_(x_0)^x d t = M m (x - x_0) $
+
+ $ u(x) <= M limits(integral)_(x_0)^x M m (t - x_0) d t = M^2 m (x - x_0)^2 / 2 $
+
+$ u(x) <= M^3 m limits(integral)_(x_0)^x (t - x_0)^2 / 2 d t $
+
+$ forall x u(x) <= m (M^4 (x - x_0)^n) / (2 dot 3 dot 4 dot ... dot n) = m (M (x - x_0))^n / (n!) $
+
+Факториал растёт быстрее степени, поэтому $limits(lim)_(n -> infinity) m (M (x - x_0))^n / (n!) = 0$
+
+$ 0 <= u(x) <= 0 => u(x) equiv 0 => phi(x) - phi_1(x) equiv 0 => phi(x) $ --- единственное решение.
+
+== Линейные ДУ n-ного порядка
+
+=== Определения
+
+==== Линейные уравнения n-ного порядка
+
