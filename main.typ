@@ -199,6 +199,52 @@ $ forall x u(x) <= m (M^4 (x - x_0)^n) / (2 dot 3 dot 4 dot ... dot n) = m (M (x
 $ 0 <= u(x) <= 0 => u(x) equiv 0 => phi(x) - phi_1(x) equiv 0 => phi(x) $ --- единственное решение.
 
 == Линейные ДУ n-ного порядка
+// название фото = IMG_НомерВопроса_ПорядокПросмотраФото
+// TODO перевести фото в электронный вид, определение 2.1
+#image("img/IMG_21_1.jpg")
+#image("img/IMG_21_2.jpg")
+#image("img/IMG_21_3.jpg")
+#image("img/IMG_21_4.jpg")
+
+
+// TODO определение 2.2 переписать
+#image("img/IMG_22_1.jpg")
+
+// TODO определение 2.3 переписать
+#image("img/IMG_23_1.jpg")
+#image("img/IMG_23_2.jpg")
+#image("img/IMG_23_3.jpg")
+
+// TODO определение 2.4 переписать
+#image("img/IMG_24_1.jpg")
+#image("img/IMG_24_2.jpg")
+
+// TODO определение 2.5 переписать
+#image("img/IMG_25_1.jpg")
+#image("img/IMG_25_2.jpg")
+#image("img/IMG_25_3.jpg")
+
+// TODO определение 2.6 переписать
+#image("img/IMG_26_1.jpg")
+#image("img/IMG_26_2.jpg")
+#image("img/IMG_26_3.jpg")
+
+// TODO определение 2.7 переписать
+#image("img/IMG_27_1.jpg")
+#image("img/IMG_27_2.jpg")
+
+// TODO определение 2.8 переписать
+#image("img/IMG_28_1.jpg")
+#image("img/IMG_28_2.jpg")
+#image("img/IMG_28_3.jpg")
+
+// TODO определение 2.9 переписать
+#image("img/IMG_29_1.jpg")
+
+// TODO определение 2.10 переписать
+#image("img/IMG_210_1.jpg")
+#image("img/IMG_210_2.jpg")
+#image("img/IMG_210_3.jpg")
 
 === Определения
 
