@@ -73,7 +73,7 @@ $y(x_0) = y_0$, $space space y^' (x_0) = y_0^'$,...,$y^((n-1)) (x_0) = y_0^((n-1
 === 4) линейно зависимые функции
 
 Пусть функции $phi_1 (x), phi_2 (x), ..., phi_m (x)$ определены на $[a, b]$. Они называются *линейно-зависимыми* на $[a, b]$, если \
-$exists alpha_1,...,alpha_2$ --- не все равные 0, т.ч. $alpha_1 phi_1(x)+ alpha_2 phi_2(x)+...+alpha_m phi_m(x) equiv 0$ ($forall x in [a,b]$)
+$exists alpha_1,...,alpha_m$ --- не все равные 0, т.ч. $alpha_1 phi_1(x)+ alpha_2 phi_2(x)+...+alpha_m phi_m(x) equiv 0$ ($forall x in [a,b]$)
 
 === 5) определитель Вронского
 
