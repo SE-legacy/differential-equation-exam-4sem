@@ -15,7 +15,7 @@ $
 2. Делим переменные:
 
 $
-  1/g(y) = f(x) d x, g(y) != 0
+  1/g(y) = f(x) d x, space g(y) != 0
 $
 
 3. Вычисляем два интеграла:
@@ -31,24 +31,24 @@ $
 $
 C --- произвольная константа.
 
-5. Находим из уравнения $y = phi(x) + C$.
+5. Находим из уравнения $y = phi(x, C)$.
 
-Тогда общее решение имеет вид: $y = phi(x) + C$, где $C$ --- произвольная константа.
+Тогда общее решение имеет вид: $y = phi(x, C)$, где $C$ --- произвольная константа.
 
 // Надо ли сюда вставлять замечание про существование решения, если интеграл не берётся? Хз
 
 ==== Обоснование алгоритма:
 
-Покажем, что $y = phi(x) + C$ $forall C$ будет решением уравнения @eq:partial_variables.
+Покажем, что $y = phi(x, C)$ при любом $C$ будет решением уравнения @eq:partial_variables.
 
 Фиксируем $C = C_0$.
 
 По построению:
 $
-  G(phi(x, C_0)) = F(x) + C_0\
-  d/(d x) G(phi(x, C_0)) = d/(d x) F(x)\
-  G'(phi(x, C_0)) dot phi'(x, C_0) = F'(x)\
-  1/g(phi(x, C_0)) dot phi'(x, C_0) = f(x)\
+  G(phi(x, C_0)) eq.triple F(x) + C_0\
+  d/(d x) G(phi(x, C_0)) eq.triple d/(d x) F(x)\
+  G'(phi(x, C_0)) dot phi'(x, C_0) eq.triple F'(x)\
+  1/g(phi(x, C_0)) dot phi'(x, C_0) eq.triple f(x)\
   phi'(x, C_0) eq.triple f(x) g(phi(x, C_0))
 $
 
@@ -56,12 +56,13 @@ $
 
 
 === Формула общего решения линейного уравнения I-го порядка (теорема 1)
+
 Запишем линейное ДУ 1-го порядка в виде
 $ y' + p(x) y = q(x) $ <lin_eq>
 где $p(x) = (a_1(x)) / (a_0(x))$, $q(x) = f(x) / a_0(x)$
 
 Общее решение данного уравнения находится по формуле:
-$ y(x) = e^(- integral p(x) d x) ( integral e^(integral p(x) d x) q(x) d x + C) $ <lin_solution>
+$ y(x) = e^(- integral p(x) d x) ( integral e^(integral p(x) d x) q(x) d x + c) $ <lin_solution>
 где $integral p(x) d x$, $integral e^(integral p(x) d x) q(x) d x$ --- произвольные фиксированные первообразные, $c$ --- const
 
 ==== Доказательство:
@@ -69,12 +70,13 @@ $ y(x) = e^(- integral p(x) d x) ( integral e^(integral p(x) d x) q(x) d x + C) 
 Докажем, что @lin_solution при любом $x$ дает решение уравнения @lin_eq. Подставим @lin_solution в @lin_eq:
 
 $
-  y' = e^( - integral p(x) d x) (- p(x) d x) (integral e^(integral p(x) d x) q(x) d x + c) + \ + underbrace(e^(- integral p(x) d x) e^(integral p(x) d x), 1) q(x) +p(x) e^(- integral p(x) d x) (integral e^(integral p(x) d x) q(x) d x + c) = q(x)
+  e^( - integral p(x) d x) (- p(x) d x) (integral e^(integral p(x) d x) q(x) d x + c) + \ + underbrace(e^(- integral p(x) d x) e^(integral p(x) d x), 1) q(x) +p(x) e^(- integral p(x) d x) (integral e^(integral p(x) d x) q(x) d x + c) = q(x)
 $
 
 Таким образом @lin_solution дает решение при любом $c$
 
 === Метод вариации (Лагранжа)
+
 Рассмотрим линейное ДУ 1-го порядка: $y'(x) + p(x) y = q(x)$
 + Решим соответствующее ему однородное уравнение $y' + p(x) y = 0$ --- с разделяющимися. $y_0 = c e^(-F(x))$ --- общее решение.
 + Ищем решение исходного уравнения в виде $y = C(x) e^(- F(x))$, где $C(x)$ --- пока неизвестная функция.\
@@ -83,6 +85,7 @@ $
   $ y(x) = e^(-F(x))(integral e^F(x) q(x) d x + c) $
 
 === Алгоритм решения ДУ в полных дифференциалах и его обоснование
+
 _Рассмотрим симметричную форму ДУ:_
 
 $ M(x, y) d x + N(x, y) d y = 0 $ <full_differentials_1>
