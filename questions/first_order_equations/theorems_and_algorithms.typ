@@ -85,7 +85,7 @@ $
 === Алгоритм решения ДУ в полных дифференциалах и его обоснование
 _Рассмотрим симметричную форму ДУ:_
 
-_$ M(x, y) d x + N(x, y) d y = 0 $_
+$ M(x, y) d x + N(x, y) d y = 0 $ <full_differentials_1>
 
 _Уравнение является ДУ в полных дифференциалах, если_
 $ (partial M(x, y)) / (partial y) = (partial N(x, y)) / (partial x) $
@@ -118,8 +118,33 @@ _Считаем, что $y = y(x)$, $N(x, y) != 0$_
 
 #underline[Замечание:] Найти $y$ в явном виде возможно не всегда. В таком случае записывается общее решение в неявном виде, коим является @overall_solution_full_partial
 
-// Пока не хватает обоснования
+==== Обоснование:
 
+Пусть $N(x, y) != 0$ и $y = y(x)$.
+
+В этом случае @full_differentials_1 эквивалентно уравнению
+
+$
+  (d y)/(d x) = - (M(x, y))/(N(x, y))
+$ <full_differentials_2>
+
+$
+  Phi(x, phi(x, c)) equiv C
+$
+<full_differentials_3>
+
+по построению (см. пункт 5)
+
+Другими словами, $phi(x, C)$ --- неявная функция, определяющая уравнение из пункта 4.
+Она определяется однозначно, так как $(partial Phi)/(partial y) = N(x, y) != 0$ (см Т. о неявной функции)
+
+$
+  (partial Phi(x, phi(x, C)))/(partial x) + (partial Phi(x, phi(x, C)))/(partial y) dot (d phi(x, C))/(d x) equiv 0\
+  M(x, phi(x, C)) + underbrace(N(x, phi(x, C)), != 0) phi'(x, C) equiv 0 \
+  phi'(x, C) equiv - (M(x, phi(x, C)))/(N(x, phi(x, C))).
+$
+
+Тогда $phi(x, C)$ --- решение @full_differentials_2, т.е $phi(x, C)$ --- решение @full_differentials_1 $forall C$.
 
 === Основная теорема существования и единственности (1 - 3 этапы)
 
