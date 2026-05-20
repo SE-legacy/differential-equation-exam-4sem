@@ -1,6 +1,3 @@
-
-#set math.equation(numbering: none)
-
 #show math.equation: it => {
   if it.has("label") {
     math.equation(numbering: "(1)", block: true, it.body)
@@ -8,7 +5,6 @@
     it
   }
 }
-
 
 #show ref: it => {
   let eq = counter(math.equation)
@@ -19,8 +15,6 @@
     it
   }
 }
-
-
 
 = Методические материалы для подготовки к зачёту по дисциплине "Дифференциальные уравнения"
 
@@ -35,8 +29,6 @@
 
 #include "questions/first_order_equations/definitions.typ"
 #include "questions/first_order_equations/theorems_and_algorithms.typ"
-
-
 
 #h(0.5cm)
 === 2. Линейные ДУ n-го порядка
