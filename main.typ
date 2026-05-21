@@ -10,7 +10,7 @@
   let eq = counter(math.equation)
   let el = it.element
   if el != none and el.func() == math.equation {
-    link(el.location(), numbering("(1)", ..eq.at(el.location())))
+    link(el.location(), numbering("(1)", ..eq.at(el.location()).map(it => it + 1)))
   } else {
     it
   }
