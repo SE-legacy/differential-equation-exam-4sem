@@ -12,7 +12,7 @@ $ <eq:2-order_lin_eq>
 
 $
   y'' + a_1 (x) y' = 0, space a <= x <= b
-$ <eq:2-order_lin_eq_no_y>
+$ <eq:2-order_lin_eq_1_no_y>
 
 Переходим к новой неизвестной функции $z(x)$ по формуле
 
@@ -20,23 +20,23 @@ $
   z(x) = y'(x), space z'(x) = y''(x)
 $
 
-Подставляем в @eq:2-order_lin_eq_no_y, получаем уравнение для $z$:
+Подставляем в @eq:2-order_lin_eq_1_no_y, получаем уравнение для $z$:
 
 $
   z'(x) + a_1 (x) z(x) = 0
-$ <eq:2-order_lin_eq_z>
+$ <eq:2-order_lin_eq_1_z>
 
-@eq:2-order_lin_eq_z --- уравнение 1-го порядка с разделяющимися переменными.
+@eq:2-order_lin_eq_1_z --- уравнение 1-го порядка с разделяющимися переменными.
 
 Решаем это уравнение:
 
 $
   z(x) = c_1 phi(x)
-$ <eq:2-order_lin_eq_z_solution>
+$ <eq:2-order_lin_eq_1_z_solution>
 
-@eq:2-order_lin_eq_z_solution --- общее решение уравнения @eq:2-order_lin_eq_z, $phi(x)$ --- известная функция.
+@eq:2-order_lin_eq_1_z_solution --- общее решение уравнения @eq:2-order_lin_eq_1_z, $phi(x)$ --- известная функция.
 
-Отсюда $y'(x) = c_1 phi(x)$; $y(x) = c_1 integral phi(x) d x + c_2$ --- общее решение уравнения @eq:2-order_lin_eq_no_y.
+Отсюда $y'(x) = c_1 phi(x)$; $y(x) = c_1 integral phi(x) d x + c_2$ --- общее решение уравнения @eq:2-order_lin_eq_1_no_y.
 
 ==== Интегрирование с помощью частного решения
 
@@ -46,7 +46,7 @@ $
   y'' + a_1 (x) y' + a_2 (x) y = 0
 $ <eq:2-order_lin_eq_2>
 
-Пусть $y_"ч" (x)$ --- частное решение @eq:2-order_lin_eq_2.
+Пусть $y_"ч" (x)$ --- частное решение уравнения @eq:2-order_lin_eq_2.
 
 Переходим к новой неизвестной функции $z(x)$ по формуле
 
@@ -54,7 +54,9 @@ $
   y(x) = y_"ч" (x) z(x)
 $ <eq:2-order_lin_eq_2_z>
 
-$ y'(x) = y'_"ч" (x) z(x) + y_"ч" (x) z'(x) $
+$
+  y'(x) = y'_"ч" (x) z(x) + y_"ч" (x) z'(x)
+$
 
 $
   y''(x) = y''_"ч" (x) z(x) + y'_"ч" (x) z'(x) + y'_"ч" (x) z(x) + y_"ч" (x) z''(x) = y''_"ч" (x) z(x) + 2 y'_"ч" (x) z'(x) + y_"ч" z''(x)
@@ -80,8 +82,124 @@ $ <eq:2-order_lin_eq_2_no_z>
 
 Решаем это уравнение по предыдущему алгоритму:
 
-$z(x) = c_1 Phi(x) + c_2$ --- общее решение @eq:2-order_lin_eq_2_no_z.
+$z(x) = c_1 Phi(x) + c_2$ --- общее решение уравнения @eq:2-order_lin_eq_2_no_z.
 
 Отсюда, в силу @eq:2-order_lin_eq_2_z
 
-$y(x) = c_1 y_"ч" (x) Phi(x) + c_2 y_"ч" (x)$ --- общее решение @eq:2-order_lin_eq_2.
+$y(x) = c_1 y_"ч" (x) Phi(x) + c_2 y_"ч" (x)$ --- общее решение уравнения @eq:2-order_lin_eq_2.
+
+=== Упрощение с помощью замены функции
+
+Рассмотрим уравнение
+
+$
+  y'' + a_1 (x) y' + a_2 (x) y = 0
+$ <eq:2-order_lin_eq_3>
+
+Переходим к новой неизвестной функции $z(x)$ по формуле
+
+$y(x) = u(x) z(x)$, где $u(x)$ --- пока неизвестная функция.
+
+$y' = u' z + u z'$;
+
+$y'' = u z'' + 2 u' z' + u'' z$
+
+Подставляем эти формулы в @eq:2-order_lin_eq_3:
+
+$
+  u z'' + 2 u' z' + u'' z + a_1 (u' z + u z') + a_2 u z = 0
+$
+
+$
+  u z'' + (2 u' + a_1 u) z' + (u'' + a_1 u' + a_2 u) z = 0
+$
+
+Выберем $u(x)$ как решение уравнения
+
+$
+  2 u' + a_1 (x) u = 0
+$ <eq:2-order_lin_eq_3_u>
+
+@eq:2-order_lin_eq_3_u --- уравнение с разделяющимися переменными.
+
+Решаем это уравнение:
+
+$
+  u(x) = c phi(x)
+$
+
+Берём $c = 1$, т.е. $u(x) = phi(x)$, где $phi(x)$ --- известная функция.
+
+Для $z(x)$ получаем уравнение
+
+$
+  z'' + A(x) z = 0, space A(x) = (u''(x) + a_1 (x) u'(x) + a_2 (x) u(x))/(u(x))
+$ <eq:2-order_lin_eq_3_z_solution>
+
+$A(x)$ --- известная функция.
+
+Уравнение @eq:2-order_lin_eq_3_z_solution проще уравнения @eq:2-order_lin_eq_3 в том смысле, что в нём нет $z'$.
+
+==== Пример
+
+Рассмотрим уравнение
+
+$
+  y'' + 1/x y' + (1 - 1/(4 x^2)) y = 0, space x > 0
+$ <eq:2-order_lin_eq_example_1>
+
+Делаем замену $y(x) = u(x) z(x)$, где $u(x)$ --- ненулевое решение уравнения:
+
+$
+  2 u' + 1/x u = 0
+$ <eq:2-order_lin_eq_example_1_u>
+
+@eq:2-order_lin_eq_example_1_u --- уравнение с разделяющимися переменными.
+
+Решаем это уравнение:
+
+$
+  (d u)/(d x) = -u/2 (d x)/x
+$
+
+$
+  integral (d u)/u = -1/2 integral (d x)/x
+$
+
+$
+  ln abs(n) = -1/2 ln x = ln 1/sqrt(x)
+$
+
+$u(x) = 1/sqrt(x)$ --- частное решение уравнения @eq:2-order_lin_eq_example_1_u.
+
+Таким образом,
+
+$
+  y(x) = 1/sqrt(x) z(x)
+$ <eq:2-order_lin_eq_example_1_y>
+
+Вычисляем $y'(x)$ и $y''(x)$:
+
+$y'(x) = -1/(2 sqrt(x^3)) z(x) + 1/sqrt(x) z'(x)$
+
+$y''(x) = 3/(4 sqrt(x^5)) z(x) - 1/(sqrt(x^3)) z'(x) + 1/(sqrt(x)) z''(x)$
+
+Подставляем эти формулы в уравнение @eq:2-order_lin_eq_example_1:
+
+$
+  3/(4 sqrt(x^5)) z(x) - 1/sqrt(x^3) z'(x) + 1/sqrt(x) z''(x) -1/(2 sqrt(x^5)) z(x) + 1/sqrt(x^3) z'(x) + 1/sqrt(x) z(x) - 1/(4 sqrt(x^5)) z(x) = 0
+$
+
+$
+  1/sqrt(x) z''(x) + 1/sqrt(x) z(x) = 0
+$
+
+Получаем уравнение
+
+$
+  z'' + z = 0 ==> z = c_1 cos x + c_2 sin x
+$ <eq:2-order_lin_eq_example_1_z>
+
+Из уравнения @eq:2-order_lin_eq_example_1_y получаем
+
+$y(x) = c_1 (cos x)/sqrt(x) + c_2 (sin x)/sqrt(x)$ --- общее решение уравнения @eq:2-order_lin_eq_example_1.
