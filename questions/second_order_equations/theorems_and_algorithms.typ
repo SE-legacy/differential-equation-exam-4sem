@@ -409,3 +409,193 @@ $
 $
 
 $y(x) = z(2 sqrt(x)) = c_1 e^(2 sqrt(x)) + c_2 e^(-2 sqrt(x))$ --- общее решение уравнения @eq:2-order_lin_eq_example_2.
+
+=== Метод степенных рядов
+
+Рассмотрим уравнение
+
+$
+  y'' - x y = 0
+$
+
+Это уравнение не имеет формулы для его решения.
+
+Рассмотрим уравнение
+
+$
+  y'' + a_1 (x) y' + a_2 (x) y = f(x), space a <= x <= b
+$ <eq:2-order_lin_eq_5>
+
+==== Теорема
+
+Предположим, что функции $a_1 (x), a_2 (x), f(x)$ можно разложить в степенные ряды на $[a, b]$.
+
+Тогда любое решение уравнения @eq:2-order_lin_eq_5 тоже раскладывается в степенной ряд на отрезке $[a, b]$. (б/д)
+
+==== Пример (на использование теоремы)
+
+Рассмотрим уравнение
+
+$
+  y'' - x y = 0, space -infinity < x < infinity
+$ <eq:2-order_lin_eq_example_3>
+
+$a_1 (x) equiv 0 = 0 + 0 x + 0 x^2 + ... + 0 x^n + ...$ (сходится $forall x in RR$)
+
+$a_2 (x) = -x = 0 + (-1) x + 0 x^2 + ... + 0 x^n + ...$ (сходится $forall x in RR$)
+
+$f(x) equiv 0 = 0 + 0 x + 0 x^2 + ...$
+
+Выполняются условия нашей теоремы.
+
+Следовательно, любое решение уравнения @eq:2-order_lin_eq_example_3 раскладывается в степенной ряд, сходящийся на $(-infinity, infinity)$.
+
+Пусть $c_0, c_1$ --- фиксированные произвольные числа.
+
+Будем искать решение задачи Коши
+
+$
+  y'' - x y = 0, space y(0) = c_0, space y'(0) = c_1
+$ <eq:2-order_lin_eq_example_3_cauchy>
+
+Эта задача имеет единственное решение
+
+$
+  y(x) stretch(=)^"по нашей"_"теореме" a_0 + a_1 x + a_2 x^2 + a_3 x^3 + a_4 x^4 + ... = limits(sum)_(n = 0)^(infinity) a_n x^n
+$ <eq:2-order_lin_eq_example_3_cauchy_solution>
+
+где $a_0, a_1, ..., a_n, ...$ --- пока неизвестные числа.
+
+Из уравнения @eq:2-order_lin_eq_example_3_cauchy_solution:
+
+$
+  y(0) = a_0 = c_0
+$
+
+$a_0$ найдено.
+
+По свойству степенных рядов из уравнения @eq:2-order_lin_eq_example_3_cauchy_solution:
+
+$
+  y'(x) = 0 + a_1 + 2 a_2 x + 3 a_3 x^2 + 4 a_4 x^3 + ... + n a_n x^(n - 1) + ...
+$ <eq:2-order_lin_eq_example_3_cauchy_solution_2>
+
+Из уравнения @eq:2-order_lin_eq_example_3_cauchy_solution_2:
+
+$
+  y'(0) = a_1 = c_1
+$
+
+$a_1$ найдено.
+
+Дифференцируем обе части уравнения @eq:2-order_lin_eq_example_3_cauchy_solution_2:
+
+$
+  y''(x) = 2 a_2 + 3 dot 2 a_3 x + 4 dot 3 a_4 x^2 + ... + n (n - 1) a_n x^(n - 2) + ... = \ = 2 a_2 + limits(sum)_(k = 1)^(infinity) (k + 2) (k + 1) a_(k + 2) x^k
+$ <eq:2-order_lin_eq_example_3_cauchy_solution_3>
+
+Рассмотрим уравнение
+
+$
+  x y(x) stretch(=)^("по" #ref(<eq:2-order_lin_eq_example_3_cauchy_solution>)) a_0 x + a_1 x^2 + a_2 x^3 + ... + a_(k - 1) x^k + ... = \ = limits(sum)_(k = 1)^(infinity) a_(k - 1) x^k
+$ <eq:2-order_lin_eq_example_3_cauchy_solution_4>
+
+Подставляем уравнения @eq:2-order_lin_eq_example_3_cauchy_solution_3 и @eq:2-order_lin_eq_example_3_cauchy_solution_4 в уравнение @eq:2-order_lin_eq_example_3:
+
+$
+  2 a_2 + limits(sum)_(k = 1)^(infinity) (k + 2) (k + 1) a_(k + 2) x^k - limits(sum)_(k = 1)^(infinity) a_(k - 1) x^k equiv 0
+$
+
+$
+  2 a_2 + limits(sum)_(k = 1)^(infinity) [(k + 2)(k + 1) a_(k + 2) - a_(k - 1)] x^k equiv 0 = 0 + 0 x + 0 x^2 + ... + 0 x^k + ...
+$
+
+Отсюда, в силу единственности разложения в степенной ряд:
+
+$
+  cases(2 a_2 = 0 ==> a_2 = 0, (k + 2)(k + 1) a_(k + 2) - a_(k - 1) = 0\, space k = 1\, 2\, ...)
+$
+
+Получили рекуррентную формулу
+
+$
+  a_(k + 2) = (a_(k - 1))/((k + 2)(k + 1)), space k = 1, 2, ...
+$
+
+Обозначим $n = k - 1$. Тогда эта формула примет вид
+
+$
+  a_(n + 3) = (a_n)/((n + 3)(n + 2)), space n = 0, 1, 2, ...
+$ <eq:2-order_lin_eq_example_3_recurrent>
+
+Рассмотрим $a_0 = c_0, a_1 = c_1, a_2 = 0, a_3, a_4, a_5, a_6, a_7, ...$
+
+При $n = 0$ из формулы @eq:2-order_lin_eq_example_3_recurrent:
+
+$
+  a_3 = (a_0)/(3 dot 2) = (c_0)/(3 dot 2)
+$
+
+Нашли $a_3$.
+
+При $n = 3$:
+
+$
+  a_6 = (a_3)/(6 dot 5) = (c_0)/(3 dot 2 dot 6 dot 5)
+$
+
+При $n = 6$:
+
+$
+  a_9 = (c_0)/(3 dot 2 dot 6 dot 5 dot 9 dot 8)
+$
+
+И так далее...
+
+$
+  a_(3 k) = (c_0)/(3 dot 2 dot 6 dot 5 dot ... dot 3 k (3 k - 1)), space k = 1, 2, ...
+$ <eq:2-order_lin_eq_example_3_recurrent_1>
+
+При $n = 1$ из формулы @eq:2-order_lin_eq_example_3_recurrent:
+
+$
+  a_4 = (a_1)/(3 dot 4) = (c_1)/(3 dot 4)
+$
+
+При $n = 4$:
+
+$
+  a_7 = (a_4)/(6 dot 7) = (c_1)/(3 dot 4 dot 6 dot 7)
+$
+
+И так далее...
+
+$
+  a_(3 k + 1) = (c_1)/(4 dot 3 dot 7 dot 6 dot ... dot 3 k (3 k + 1)), space k = 1, 2, ...
+$ <eq:2-order_lin_eq_example_3_recurrent_2>
+
+При $n = 2$ из формулы @eq:2-order_lin_eq_example_3_recurrent:
+
+$
+  a_5 = (a_2)/(5 dot 4) = 0, space a_10 = 0, ...
+$
+
+$
+  a_(3 k + 2) = 0, space k = 1, 2, ...
+$ <eq:2-order_lin_eq_example_3_recurrent_3>
+
+Мы нашли все $a_n$ из формулы @eq:2-order_lin_eq_example_3_recurrent.
+
+Преобразуем решение
+
+$
+  y(x) = limits(sum)_(n = 0)^(infinity) a_n x^n = \ = limits(sum)_(k = 0)^(infinity) a_(3 k) x^(3 k) + limits(sum)_(n = 0)^(infinity) a_(3 k + 1) x^(3 k + 1) + limits(sum)_(n = 0)^(infinity) a_(3 k + 2) x^(3 k + 2) = \ = c_0 underbrace((a_0 + limits(sum)_(k = 1)^(infinity) (x^(3 k))/(3 dot 2 dot 6 dot 5 dot ... dot 3 k (3 k - 1))), phi_1 (x)) + c_1 underbrace((x + limits(sum)_(k = 1)^(infinity) (x^(3 k + 1))/(3 dot 4 dot 6 dot 7 dot ... dot 3 k (3 k + 1))), phi_2 (x))
+$
+
+Так как $c_0, c_1$ --- любые числа, то общее решение уравнения @eq:2-order_lin_eq_example_3 имеет вид
+
+$
+  y(x) = c_1 phi_1 (x) + c_2 phi_2 (x)
+$
+
+где $c_1, c_2$ --- произвольные константы.
