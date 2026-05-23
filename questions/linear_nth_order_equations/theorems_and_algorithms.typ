@@ -447,3 +447,89 @@ $
 $
 
 То есть $l(y_"ч" (x)) equiv f(x) ==> y_"ч" (x)$ --- решение @variation_method_proof_1.
+
+=== Пример решения методом вариации
+
+Рассмотрим уравнение
+
+$
+  y'' omega^2 y = f(x), space omega > 0, space a <= x <= b
+$ <variation_method_example_1>
+
+$f(x)$ --- заданная функция.
+
+Решим соответствующее однородное уравнение
+
+$
+  y'' + omega^2 y = 0
+$ <variation_method_example_2>
+
+Легко показать, что $phi_1 (x) = cos omega x, phi_2 (x) = sin omega x$ --- решения уравнения @variation_method_example_2.
+
+Рассмотрим определитель Вронского этих функций:
+
+$
+  W(x) = mat(delim: "|", phi_1 (x), phi_2 (x); phi'_1 (x), phi'_2 (x)) = mat(delim: "|", cos omega x, sin omega x; - omega sin omega x, omega cos omega x) = omega cos^2 omega x + omega sin^2 omega x = omega != 0
+$
+
+$W(x) != 0 ==>$ по Т.2 $phi_1 (x), phi_2 (x)$ линейно независимы на $[a, b]$, то есть образуют ф.с.р.
+
+По Т.6 общее решение уравнения @variation_method_example_2 имеет вид
+
+$
+  y_0 (x) = c_1 cos omega x + c_2 sin omega x
+$
+
+Найдём частное решение уравнения @variation_method_example_1 методом вариации произвольных постоянных.
+
+Ищем $y_"ч" (x)$ в виде
+
+$
+  y_"ч" (x) = c_1 (x) cos omega x + c_2 (x) sin omega x
+$ <variation_method_example_3>
+
+где $c_1 (x), c_2 (x)$ --- пока неизвестные функции.
+
+Функции $c_1 (x), c_2 (x)$ ищем как решения следующей системы:
+
+$
+  cases(c'_1 (x) cos omega x + c'_2 (x) sin omega x = 0, c'_1 (x) (- omega sin omega x) + c'_2 (x) omega cos omega x = f(x))
+$ <variation_method_example_4>
+
+Определитель этой системы:
+
+$
+  Delta = W(x) = omega
+$
+
+По формулам Крамера
+
+$
+  c'_1 (x) = mat(delim: "|", 0, sin omega x; f(x), omega cos omega x)/omega = -1/omega f(x) sin omega x
+$
+
+$
+  c'_2 (x) = mat(delim: "|", cos omega x, 0; -omega sin omega x, f(x))/omega = 1/omega f(x) cos omega x
+$
+
+$
+  c_1 (x) = limits(integral)_(x_0 in [a, b]) c'_1 (x) d x = - 1/omega limits(integral)_(x_0)^(x) f(t) sin omega t d t
+$
+
+$
+  c_2 (x) = 1/omega limits(integral)_(x_0)^(x) f(t) cos omega t d t
+$
+
+Подставляем эти формулы в @variation_method_example_3:
+
+$
+  y_"ч" (x) = cos omega x dot (-1/omega) limits(integral)_(x_0)^(x) f(t) sin omega t d t + sin omega x dot 1/omega limits(integral)_(x_0)^(x) f(t) cos omega t d t = \ = 1/omega limits(integral)_(x_0)^(x) (-cos omega x sin omega t + sin omega x cos omega t) f(t) d t = 1/omega limits(integral)_(x_0)^(x) sin omega (x - t) dot f(t) d t
+$
+
+По Т.7 общее решение @variation_method_example_1 имеет вид
+
+$
+  y = c_1 cos omega x + c_2 sin omega x + 1/omega limits(integral)_(x_0)^(x) f(t) sin omega (x - t) d t, space x_0 in [a, b]
+$
+
+где $c_1, c_2$ --- произвольные константы.
