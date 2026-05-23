@@ -4,7 +4,7 @@
 
 $
   y'' + a_1 (x) y' + a_2 (x) y = 0
-$ <eq:2-order_lin_eq>
+$
 
 ==== В уравнении нет $y$
 
@@ -12,7 +12,7 @@ $ <eq:2-order_lin_eq>
 
 $
   y'' + a_1 (x) y' = 0, space a <= x <= b
-$ <eq:2-order_lin_eq_1_no_y>
+$ <eq:2-order_lin_eq_1>
 
 Переходим к новой неизвестной функции $z(x)$ по формуле
 
@@ -20,23 +20,23 @@ $
   z(x) = y'(x), space z'(x) = y''(x)
 $
 
-Подставляем в @eq:2-order_lin_eq_1_no_y, получаем уравнение для $z$:
+Подставляем в @eq:2-order_lin_eq_1, получаем уравнение для $z$:
 
 $
   z'(x) + a_1 (x) z(x) = 0
-$ <eq:2-order_lin_eq_1_z>
+$
 
-@eq:2-order_lin_eq_1_z --- уравнение 1-го порядка с разделяющимися переменными.
+Это уравнение 1-го порядка с разделяющимися переменными.
 
-Решаем это уравнение:
+Решаем это уравнение. Получаем общее решение:
 
 $
   z(x) = c_1 phi(x)
-$ <eq:2-order_lin_eq_1_z_solution>
+$
 
-@eq:2-order_lin_eq_1_z_solution --- общее решение уравнения @eq:2-order_lin_eq_1_z, $phi(x)$ --- известная функция.
+$phi(x)$ --- известная функция.
 
-Отсюда $y'(x) = c_1 phi(x)$; $y(x) = c_1 integral phi(x) d x + c_2$ --- общее решение уравнения @eq:2-order_lin_eq_1_no_y.
+Отсюда $y'(x) = c_1 phi(x)$; $y(x) = c_1 integral phi(x) d x + c_2$ --- общее решение уравнения @eq:2-order_lin_eq_1.
 
 ==== Интегрирование с помощью частного решения
 
@@ -44,15 +44,15 @@ $ <eq:2-order_lin_eq_1_z_solution>
 
 $
   y'' + a_1 (x) y' + a_2 (x) y = 0
-$ <eq:2-order_lin_eq_2>
+$ <eq:2-order_lin_eq_2_1>
 
-Пусть $y_"ч" (x)$ --- частное решение уравнения @eq:2-order_lin_eq_2.
+Пусть $y_"ч" (x)$ --- частное решение этого уравнения.
 
 Переходим к новой неизвестной функции $z(x)$ по формуле
 
 $
   y(x) = y_"ч" (x) z(x)
-$ <eq:2-order_lin_eq_2_z>
+$ <eq:2-order_lin_eq_2_2>
 
 $
   y'(x) = y'_"ч" (x) z(x) + y_"ч" (x) z'(x)
@@ -62,7 +62,7 @@ $
   y''(x) = y''_"ч" (x) z(x) + y'_"ч" (x) z'(x) + y'_"ч" (x) z'(x) + y_"ч" (x) z''(x) = y''_"ч" (x) z(x) + 2 y'_"ч" (x) z'(x) + y_"ч" z''(x)
 $
 
-Подставляем эти формулы в @eq:2-order_lin_eq_2:
+Подставляем эти формулы в @eq:2-order_lin_eq_2_1:
 
 $
   y''_"ч" (x) z(x) + 2 y'_"ч" (x) z'(x) + y_"ч" z''(x) + a_1 (x) (y'_"ч" (x) z(x) + y_"ч" (x) z'(x)) + a_2 (x) y_"ч" (x) z(x) = 0
@@ -76,15 +76,17 @@ $
 
 $
   z''(x) + (2 y'_"ч" + a_1 (x) y_"ч" (x))/(y_"ч" (x)) z'(x) = 0
-$ <eq:2-order_lin_eq_2_no_z>
+$
 
-В уравнении @eq:2-order_lin_eq_2_no_z нет $z$.
+В этом уравнении нет $z$.
 
-Решаем это уравнение по предыдущему алгоритму:
+Решаем это уравнение по предыдущему алгоритму. Получаем общее решение:
 
-$z(x) = c_1 Phi(x) + c_2$ --- общее решение уравнения @eq:2-order_lin_eq_2_no_z.
+$
+  z(x) = c_1 Phi(x) + c_2
+$
 
-Отсюда, в силу @eq:2-order_lin_eq_2_z, $y(x) = c_1 y_"ч" (x) Phi(x) + c_2 y_"ч" (x)$ --- общее решение уравнения @eq:2-order_lin_eq_2.
+Отсюда, в силу @eq:2-order_lin_eq_2_2, $y(x) = c_1 y_"ч" (x) Phi(x) + c_2 y_"ч" (x)$ --- общее решение уравнения @eq:2-order_lin_eq_2_1.
 
 === Упрощение с помощью замены функции
 
@@ -124,9 +126,9 @@ $
 
 $
   2 u' + a_1 (x) u = 0
-$ <eq:2-order_lin_eq_3_u>
+$
 
-@eq:2-order_lin_eq_3_u --- уравнение с разделяющимися переменными.
+Это уравнение с разделяющимися переменными.
 
 Решаем это уравнение:
 
@@ -140,11 +142,11 @@ $
 
 $
   z'' + A(x) z = 0, space A(x) = (u''(x) + a_1 (x) u'(x) + a_2 (x) u(x))/(u(x))
-$ <eq:2-order_lin_eq_3_z_solution>
+$
 
 $A(x)$ --- известная функция.
 
-Уравнение @eq:2-order_lin_eq_3_z_solution проще уравнения @eq:2-order_lin_eq_3 в том смысле, что в нём нет $z'$.
+Это уравнение проще уравнения @eq:2-order_lin_eq_3 в том смысле, что в нём нет $z'$.
 
 ==== Пример
 
@@ -152,15 +154,15 @@ $A(x)$ --- известная функция.
 
 $
   y'' + 1/x y' + (1 - 1/(4 x^2)) y = 0, space x > 0
-$ <eq:2-order_lin_eq_example_1>
+$ <eq:2-order_lin_eq_3_example_1>
 
 Делаем замену $y(x) = u(x) z(x)$, где $u(x)$ --- ненулевое решение уравнения:
 
 $
   2 u' + 1/x u = 0
-$ <eq:2-order_lin_eq_example_1_u>
+$ <eq:2-order_lin_eq_3_example_2>
 
-@eq:2-order_lin_eq_example_1_u --- уравнение с разделяющимися переменными.
+Это уравнение с разделяющимися переменными.
 
 Решаем это уравнение:
 
@@ -176,13 +178,13 @@ $
   ln abs(u) = -1/2 ln x = ln 1/sqrt(x)
 $
 
-$u(x) = 1/sqrt(x)$ --- частное решение уравнения @eq:2-order_lin_eq_example_1_u.
+$u(x) = 1/sqrt(x)$ --- частное решение уравнения @eq:2-order_lin_eq_3_example_2.
 
 Таким образом,
 
 $
   y(x) = 1/sqrt(x) z(x)
-$ <eq:2-order_lin_eq_example_1_y>
+$ <eq:2-order_lin_eq_3_example_3>
 
 Вычисляем $y'(x)$ и $y''(x)$:
 
@@ -194,7 +196,7 @@ $
   y''(x) = 3/(4 sqrt(x^5)) z(x) - 1/(sqrt(x^3)) z'(x) + 1/(sqrt(x)) z''(x)
 $
 
-Подставляем эти формулы в уравнение @eq:2-order_lin_eq_example_1:
+Подставляем эти формулы в уравнение @eq:2-order_lin_eq_3_example_1:
 
 $
   3/(4 sqrt(x^5)) z(x) - 1/sqrt(x^3) z'(x) + 1/sqrt(x) z''(x) -1/(2 sqrt(x^5)) z(x) + 1/sqrt(x^3) z'(x) + 1/sqrt(x) z(x) - 1/(4 sqrt(x^5)) z(x) = 0
@@ -208,11 +210,11 @@ $
 
 $
   z'' + z = 0 ==> z = c_1 cos x + c_2 sin x
-$ <eq:2-order_lin_eq_example_1_z>
+$
 
-Из уравнения @eq:2-order_lin_eq_example_1_y получаем
+Из уравнения @eq:2-order_lin_eq_3_example_3 получаем
 
-$y(x) = c_1 (cos x)/sqrt(x) + c_2 (sin x)/sqrt(x)$ --- общее решение уравнения @eq:2-order_lin_eq_example_1.
+$y(x) = c_1 (cos x)/sqrt(x) + c_2 (sin x)/sqrt(x)$ --- общее решение уравнения @eq:2-order_lin_eq_3_example_1.
 
 === Упрощение с помощью замены переменной
 
@@ -220,7 +222,7 @@ $y(x) = c_1 (cos x)/sqrt(x) + c_2 (sin x)/sqrt(x)$ --- общее решение
 
 $
   y'' + a_1 (x) y' + a_2 (x) y = 0
-$ <eq:2-order_lin_eq_4>
+$ <eq:2-order_lin_eq_4_1>
 
 Переходим от переменной $x$ к новой переменной $t$ по формуле
 
@@ -233,7 +235,7 @@ $
 Обратная замена:
 
 $
-  t = psi(x)
+  t = psi(x), space psi^(-1) = phi
 $
 
 Имеем:
@@ -262,7 +264,7 @@ $
   y''(x) = z''(t) (d t)/(d x) psi'(x) + z'(t) psi''(x)
 $
 
-Подставляем эти формулы в уравнение @eq:2-order_lin_eq_4:
+Подставляем эти формулы в уравнение @eq:2-order_lin_eq_4_1. Получаем уравнение для $z(t)$:
 
 $
   z''(t) (psi'(x))^2 + z'(t) psi''(x) + a_1 (x) z'(t) psi'(x) + a_2 (x) z(t) = 0
@@ -270,23 +272,21 @@ $
 
 $
   (psi'(x))^2 z''(t) + (psi''(x) + a_1 (x) psi'(x)) z'(t) + a_2 (x) z(t) = 0
-$ <eq:2-order_lin_eq_4_z>
-
-@eq:2-order_lin_eq_4_z --- уравнение для $z(t)$.
+$ <eq:2-order_lin_eq_4_2>
 
 Выберем $psi(x)$ как ненулевое решение уравнения
 
 $
   psi'' + a_1 (x) psi' = 0
-$ <eq:2-order_lin_eq_4_psi>
+$ <eq:2-order_lin_eq_4_3>
 
-В уравнении @eq:2-order_lin_eq_4_psi нет $z'$.
+В этом уравнении нет $z'$.
 
-Решаем это уравнение:
+Решаем это уравнение.
 
 Переходим к новой неизвестной функции $u(x) = psi'(x)$.
 
-Подставляем в @eq:2-order_lin_eq_4_psi:
+Подставляем в @eq:2-order_lin_eq_4_3:
 
 $
   u'(x) + a_1 u(x) = 0
@@ -296,13 +296,13 @@ $
 
 Находим $u(x)$, $psi(x) = integral u(x) d x$.
 
-Пусть $psi(x)$ --- ненулевое частное решение уравнения @eq:2-order_lin_eq_4_psi.
+Пусть $psi(x)$ --- ненулевое частное решение уравнения @eq:2-order_lin_eq_4_3.
 
 $
   x = phi(t) = psi^(-1) (t)
 $
 
-Уравнение @eq:2-order_lin_eq_4_z примет вид
+Уравнение @eq:2-order_lin_eq_4_2 примет вид
 
 $
   (psi'(x))^2 z''(t) + a_2 (x) z(t) = 0
@@ -310,11 +310,11 @@ $
 
 $
   z''(t) + B(t) z(t) = 0
-$ <eq:2-order_lin_eq_4_z_solution>
+$
 
 где $B = (a_2 (x))/((psi'(x))^2)$.
 
-Уравнение @eq:2-order_lin_eq_4_z_solution проще уравнения @eq:2-order_lin_eq_4, так как в нём нет $z'$.
+Это уравнение проще уравнения @eq:2-order_lin_eq_4_1, так как в нём нет $z'$.
 
 ==== Пример
 
@@ -322,7 +322,7 @@ $ <eq:2-order_lin_eq_4_z_solution>
 
 $
   y'' + 1/(2 x) y' - 1/x y = 0, space x > 0
-$ <eq:2-order_lin_eq_example_2>
+$ <eq:2-order_lin_eq_4_example_1>
 
 Замена переменной $x = phi(t)$, $t = psi(x)$ --- обратная к $phi$.
 
@@ -372,7 +372,7 @@ $
   y'' = z''(t) 1/sqrt(x) 1/sqrt(x) - z'(t) 1/(2 sqrt(x^3))
 $
 
-Подставляем эти формулы в уравнение @eq:2-order_lin_eq_example_2:
+Подставляем эти формулы в уравнение @eq:2-order_lin_eq_4_example_1:
 
 $
   z'' 1/x - 1/(2 sqrt(x^3)) z' + 1/(2 x) 1/sqrt(x) z' - 1/x z = 0
@@ -384,9 +384,9 @@ $
 
 $
   z'' - z = 0
-$ <eq:2-order_lin_eq_example_2_z>
+$ <eq:2-order_lin_eq_4_example_2>
 
-Решаем уравнение @eq:2-order_lin_eq_example_2_z методом Эйлера.
+Решаем это уравнение методом Эйлера.
 
 Характеристическое уравнение:
 
@@ -402,13 +402,13 @@ $
   z_1 (t) = e^t, space z_2 (t) = e^(-t)
 $
 
-Общее решение уравнения @eq:2-order_lin_eq_example_2_z:
+Общее решение уравнения @eq:2-order_lin_eq_4_example_2:
 
 $
   z(t) = c_1 e^t + c_2 e^(-t)
 $
 
-$y(x) = z(2 sqrt(x)) = c_1 e^(2 sqrt(x)) + c_2 e^(-2 sqrt(x))$ --- общее решение уравнения @eq:2-order_lin_eq_example_2.
+$y(x) = z(2 sqrt(x)) = c_1 e^(2 sqrt(x)) + c_2 e^(-2 sqrt(x))$ --- общее решение уравнения @eq:2-order_lin_eq_4_example_1.
 
 === Метод степенных рядов
 
@@ -438,7 +438,7 @@ $ <eq:2-order_lin_eq_5>
 
 $
   y'' - x y = 0, space -infinity < x < infinity
-$ <eq:2-order_lin_eq_example_3>
+$ <eq:2-order_lin_eq_5_example_1>
 
 $a_1 (x) equiv 0 = 0 + 0 x + 0 x^2 + ... + 0 x^n + ...$ (сходится $forall x in RR$)
 
@@ -448,7 +448,7 @@ $f(x) equiv 0 = 0 + 0 x + 0 x^2 + ...$
 
 Выполняются условия нашей теоремы.
 
-Следовательно, любое решение уравнения @eq:2-order_lin_eq_example_3 раскладывается в степенной ряд, сходящийся на $(-infinity, infinity)$.
+Следовательно, любое решение уравнения @eq:2-order_lin_eq_5_example_1 раскладывается в степенной ряд, сходящийся на $(-infinity, infinity)$.
 
 Пусть $c_0, c_1$ --- фиксированные произвольные числа.
 
@@ -456,17 +456,17 @@ $f(x) equiv 0 = 0 + 0 x + 0 x^2 + ...$
 
 $
   y'' - x y = 0, space y(0) = c_0, space y'(0) = c_1
-$ <eq:2-order_lin_eq_example_3_cauchy>
+$
 
 Эта задача имеет единственное решение
 
 $
   y(x) stretch(=)^"по нашей"_"теореме" a_0 + a_1 x + a_2 x^2 + a_3 x^3 + a_4 x^4 + ... = limits(sum)_(n = 0)^(infinity) a_n x^n
-$ <eq:2-order_lin_eq_example_3_cauchy_solution>
+$ <eq:2-order_lin_eq_5_example_2>
 
 где $a_0, a_1, ..., a_n, ...$ --- пока неизвестные числа.
 
-Из уравнения @eq:2-order_lin_eq_example_3_cauchy_solution:
+Из уравнения @eq:2-order_lin_eq_5_example_2:
 
 $
   y(0) = a_0 = c_0
@@ -474,13 +474,13 @@ $
 
 $a_0$ найдено.
 
-По свойству степенных рядов из уравнения @eq:2-order_lin_eq_example_3_cauchy_solution:
+По свойству степенных рядов из уравнения @eq:2-order_lin_eq_5_example_2:
 
 $
   y'(x) = 0 + a_1 + 2 a_2 x + 3 a_3 x^2 + 4 a_4 x^3 + ... + n a_n x^(n - 1) + ...
-$ <eq:2-order_lin_eq_example_3_cauchy_solution_2>
+$ <eq:2-order_lin_eq_5_example_3>
 
-Из уравнения @eq:2-order_lin_eq_example_3_cauchy_solution_2:
+Из уравнения @eq:2-order_lin_eq_5_example_3:
 
 $
   y'(0) = a_1 = c_1
@@ -488,19 +488,19 @@ $
 
 $a_1$ найдено.
 
-Дифференцируем обе части уравнения @eq:2-order_lin_eq_example_3_cauchy_solution_2:
+Дифференцируем обе части уравнения @eq:2-order_lin_eq_5_example_3:
 
 $
   y''(x) = 2 a_2 + 3 dot 2 a_3 x + 4 dot 3 a_4 x^2 + ... + n (n - 1) a_n x^(n - 2) + ... = \ = 2 a_2 + limits(sum)_(k = 1)^(infinity) (k + 2) (k + 1) a_(k + 2) x^k
-$ <eq:2-order_lin_eq_example_3_cauchy_solution_3>
+$ <eq:2-order_lin_eq_5_example_4>
 
 Рассмотрим уравнение
 
 $
-  x y(x) stretch(=)^("по" #ref(<eq:2-order_lin_eq_example_3_cauchy_solution>)) a_0 x + a_1 x^2 + a_2 x^3 + ... + a_(k - 1) x^k + ... = \ = limits(sum)_(k = 1)^(infinity) a_(k - 1) x^k
-$ <eq:2-order_lin_eq_example_3_cauchy_solution_4>
+  x y(x) stretch(=)^("по" #ref(<eq:2-order_lin_eq_5_example_2>)) a_0 x + a_1 x^2 + a_2 x^3 + ... + a_(k - 1) x^k + ... = \ = limits(sum)_(k = 1)^(infinity) a_(k - 1) x^k
+$ <eq:2-order_lin_eq_5_example_5>
 
-Подставляем уравнения @eq:2-order_lin_eq_example_3_cauchy_solution_3 и @eq:2-order_lin_eq_example_3_cauchy_solution_4 в уравнение @eq:2-order_lin_eq_example_3:
+Подставляем уравнения @eq:2-order_lin_eq_5_example_4 и @eq:2-order_lin_eq_5_example_5 в уравнение @eq:2-order_lin_eq_5_example_1:
 
 $
   2 a_2 + limits(sum)_(k = 1)^(infinity) (k + 2) (k + 1) a_(k + 2) x^k - limits(sum)_(k = 1)^(infinity) a_(k - 1) x^k equiv 0
@@ -526,11 +526,11 @@ $
 
 $
   a_(n + 3) = (a_n)/((n + 3)(n + 2)), space n = 0, 1, 2, ...
-$ <eq:2-order_lin_eq_example_3_recurrent>
+$ <eq:2-order_lin_eq_5_example_6>
 
 Рассмотрим $a_0 = c_0, a_1 = c_1, a_2 = 0, a_3, a_4, a_5, a_6, a_7, ...$
 
-При $n = 0$ из формулы @eq:2-order_lin_eq_example_3_recurrent:
+При $n = 0$ из формулы @eq:2-order_lin_eq_5_example_6:
 
 $
   a_3 = (a_0)/(3 dot 2) = (c_0)/(3 dot 2)
@@ -554,9 +554,9 @@ $
 
 $
   a_(3 k) = (c_0)/(3 dot 2 dot 6 dot 5 dot ... dot 3 k (3 k - 1)), space k = 1, 2, ...
-$ <eq:2-order_lin_eq_example_3_recurrent_1>
+$
 
-При $n = 1$ из формулы @eq:2-order_lin_eq_example_3_recurrent:
+При $n = 1$ из формулы @eq:2-order_lin_eq_5_example_6:
 
 $
   a_4 = (a_1)/(3 dot 4) = (c_1)/(3 dot 4)
@@ -572,9 +572,9 @@ $
 
 $
   a_(3 k + 1) = (c_1)/(4 dot 3 dot 7 dot 6 dot ... dot 3 k (3 k + 1)), space k = 1, 2, ...
-$ <eq:2-order_lin_eq_example_3_recurrent_2>
+$
 
-При $n = 2$ из формулы @eq:2-order_lin_eq_example_3_recurrent:
+При $n = 2$ из формулы @eq:2-order_lin_eq_5_example_6:
 
 $
   a_5 = (a_2)/(5 dot 4) = 0, space a_10 = 0, ...
@@ -582,9 +582,9 @@ $
 
 $
   a_(3 k + 2) = 0, space k = 1, 2, ...
-$ <eq:2-order_lin_eq_example_3_recurrent_3>
+$
 
-Мы нашли все $a_n$ из формулы @eq:2-order_lin_eq_example_3_recurrent.
+Мы нашли все $a_n$ из формулы @eq:2-order_lin_eq_5_example_6.
 
 Преобразуем решение
 
@@ -592,7 +592,7 @@ $
   y(x) = limits(sum)_(n = 0)^(infinity) a_n x^n = \ = limits(sum)_(k = 0)^(infinity) a_(3 k) x^(3 k) + limits(sum)_(n = 0)^(infinity) a_(3 k + 1) x^(3 k + 1) + limits(sum)_(n = 0)^(infinity) a_(3 k + 2) x^(3 k + 2) = \ = c_0 underbrace((a_0 + limits(sum)_(k = 1)^(infinity) (x^(3 k))/(3 dot 2 dot 6 dot 5 dot ... dot 3 k (3 k - 1))), phi_1 (x)) + c_1 underbrace((x + limits(sum)_(k = 1)^(infinity) (x^(3 k + 1))/(3 dot 4 dot 6 dot 7 dot ... dot 3 k (3 k + 1))), phi_2 (x))
 $
 
-Так как $c_0, c_1$ --- любые числа, то общее решение уравнения @eq:2-order_lin_eq_example_3 имеет вид
+Так как $c_0, c_1$ --- любые числа, то общее решение уравнения @eq:2-order_lin_eq_5_example_1 имеет вид
 
 $
   y(x) = c_1 phi_1 (x) + c_2 phi_2 (x)
@@ -650,17 +650,17 @@ $y(0) = c_2 = 0$, $y(1) = 1 + c_1 = 0 ==> c_1 = -1$
 
 $
   y(x) = c_1 phi_1 (x) + c_2 phi_2 (x) + y_"ч" (x)
-$ <eq:2-order_lin_eq_6_solution>
+$ <eq:2-order_lin_eq_6_3>
 
-где $phi_1 (x), phi_2 (x)$ --- ф.с.р. соответствующего однородного уравнения @eq:2-order_lin_eq_6_3.
+где $phi_1 (x), phi_2 (x)$ --- ф.с.р. соответствующего однородного уравнения:
 
 $
   y'' + q(x) y = 0
-$ <eq:2-order_lin_eq_6_3>
+$
 
 $y_"ч" (x)$ --- частное решение @eq:2-order_lin_eq_6_1, которое находим методом вариации.
 
-2. Подставляем @eq:2-order_lin_eq_6_solution в краевые условия @eq:2-order_lin_eq_6_2:
+2. Подставляем @eq:2-order_lin_eq_6_3 в краевые условия @eq:2-order_lin_eq_6_2:
 
 $
   y(a) = c_1 phi_1 (a) + c_2 phi_2 (a) + y_"ч" (a) = 0
@@ -676,11 +676,11 @@ $
 
 $
   cases(c_1 phi_1 (a) + c_2 phi_2 (a) = -y_"ч" (a), c_1 phi_1 (b) + c_2 phi_2 (b) = -y_"ч" (b))
-$ <eq:2-order_lin_eq_6_system>
+$ <eq:2-order_lin_eq_6_4>
 
-@eq:2-order_lin_eq_6_system --- система линейных алгебраических уравнений относительно $c_1$ и $c_2$.
+@eq:2-order_lin_eq_6_4 --- система линейных алгебраических уравнений относительно $c_1$ и $c_2$.
 
-4. Решаем систему @eq:2-order_lin_eq_6_system.
+4. Решаем систему @eq:2-order_lin_eq_6_4.
 
   Возможные случаи:
 
@@ -690,7 +690,7 @@ $ <eq:2-order_lin_eq_6_system>
     Delta = mat(delim: "|", phi_1 (a), phi_2 (a); phi_1 (b), phi_2 (b)) != 0
   $
 
-  В этом случае система @eq:2-order_lin_eq_6_system имеет единственное решение $c_1^0, c_2^0$.
+  В этом случае система @eq:2-order_lin_eq_6_4 имеет единственное решение $c_1^0, c_2^0$.
 
   Таким образом краевая задача @eq:2-order_lin_eq_6_1 -- @eq:2-order_lin_eq_6_2 имеет единственное решение
 
@@ -706,7 +706,7 @@ $ <eq:2-order_lin_eq_6_system>
 
   Возможные подслучаи:
 
-  4.2.1. Система @eq:2-order_lin_eq_6_system имеет бесконечно много решений.
+  4.2.1. Система @eq:2-order_lin_eq_6_4 имеет бесконечно много решений.
 
   $
     c_1^((k)), c_2^((k)), space k = 1, 2, ...
@@ -720,6 +720,6 @@ $ <eq:2-order_lin_eq_6_system>
 
   являются решениями краевой задачи @eq:2-order_lin_eq_6_1 -- @eq:2-order_lin_eq_6_2.
 
-  4.2.2. Система @eq:2-order_lin_eq_6_system не имеет решения.
+  4.2.2. Система @eq:2-order_lin_eq_6_4 не имеет решения.
 
   В этом случае краевая задача @eq:2-order_lin_eq_6_1 -- @eq:2-order_lin_eq_6_2 тоже не имеет решений.
