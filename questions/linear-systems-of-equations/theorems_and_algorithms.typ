@@ -219,3 +219,33 @@ $mat(Phi'_1(x), Phi'_2(x), ..., Phi'_n (x)) equiv mat(A Phi_1(x), A Phi_2(x), ..
 === 11. *Формула Коши*
 
 $Y(x) = e^(A (x-x_0)) Y^0 + limits(integral)_(x_0)^(x) e^(A (x-t)) F(t) d t$
+
+==== Доказательство
+
+Рассмотрим задачу Коши ($space x in [a, b]$):
+
+$ y' = A y + F(x) $<eq:lin_system_11_1>
+$ Y(x_0) = Y^0 $<eq:lin_system_11_2>
+
+По Т.5 общее решение системы @eq:lin_system_11_1 имеет вид $Y(x) = Y_0 (x) = Y_ч(x)$, где $Y_0 (x)$ --- решение соответствующей однородной системы
+
+$ Y = A Y, $<eq:lin_system_11_3>
+
+$Y_ч$ --- частное решение системы @eq:lin_system_11_1.
+
+По свойству фундаментальной матрицы @eq:lin_system_11_3 $T(x)$ имеем $Y(x) = Y_0(x) + Y_ч (x) = T(x) C + Y_ч (x) = T(x) C + T(x) limits(integral)^x_(x_0) T^(-1) F(t) d t$.
+
+Таким образом, общее решение @eq:lin_system_11_1 имеет вид
+
+$ Y(x) = T(x) C + T(x) limits(integral)^x_(x_0) T^(-1) F(t) d t, $<eq:lin_system_11_4>
+
+где $C = mat(c_1; ...; c_n)$, $T(x)$ --- произвольная фундаментальная матрица системы @eq:lin_system_11_3. По Т.6 $T(x) = e^(A x)$. Подставляем в @eq:lin_system_11_4:
+
+$ Y(x) = e^(A x) C + limits(integral)^x_(x_0) e^(A(x-t)) F(t) d t $<eq:lin_system_11_5>
+
+Подставляем @eq:lin_system_11_5 в начальное условие @eq:lin_system_11_2: $e^(A x_0) C + overbrace(limits(integral)^(x_0)_(x_0) e^(A(x-t)) F(t) d t, = bold(0)) = Y^0$.
+
+Следовательно, $C_0 = e^(-A x_0)$. Подставим $C_0$ в @eq:lin_system_11_5, получим
+
+$ Y(x) = e^(A (x-x_0)) Y^0 + limits(integral)_(x_0)^(x) e^(A (x-t)) F(t) d t. $
+
