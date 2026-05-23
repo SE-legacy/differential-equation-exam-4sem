@@ -547,3 +547,218 @@ $
 $
 
 где $c_1, c_2$ --- произвольные константы.
+
+=== Метод Эйлера
+
+// Не уверен, что замечание и формула нужны
+==== Замечание
+
+$
+  e^a = 1 + a + (a^2)/(2!) + ... + (a^k)/(k!) + ...
+$
+
+Этот ряд сходится при любом вещественном $a$.
+
+Пусть $lambda = alpha + i gamma$, $alpha, gamma$ --- вещественные числа.
+
+Определим $e^lambda$:
+
+$
+  e^lambda = 1 + lambda + (lambda^2)/(2!) + ... + (lambda^k)/(k!) + ...
+$
+
+Этот ряд сходится при любом $lambda$.
+
+==== Формула Эйлера
+
+$
+  e^lambda = e^alpha (cos gamma + i sin gamma) = e^("Re" lambda) (cos "Im" lambda + i sin "Im" lambda)
+$
+
+Рассмотрим функцию при вещественном $x$:
+
+$
+  e^(lambda x) = 1 + lambda x + (lambda x)^2/(2!) + ... + (lambda x)^k/(k!) + ... = e^(alpha x) (cos gamma x i sin gamma x) - #[комплексная функция.]
+$
+
+Найдём
+
+$
+  d/(d x) e^(lambda x) = lambda + (lambda^2)/(2!) 2 x + (lambda^3)/(3!) 3 x^2 + ... + (lambda^k)/(k!) k x^(k - 1) + ... = \ = lambda (1 + lambda x + (lambda x)^2/(2!) + ... + (lambda x)^(k - 1)/((k - 1)!) + ...) = lambda e^(lambda x)
+$
+
+==== Метод Эйлера
+
+Рассмотрим уравнение
+
+$
+  y^((n)) + a_1 y^((n-1)) + ... + a_n y = 0,
+$ <euler_method_1>
+
+где $a_1, ..., a_n in CC$.
+
+Ищем его решение методом Эйлера.
+
+Найдём частное решение уравнения @euler_method_1 в виде
+
+$
+  y = e^(lambda x),
+$
+
+где $lambda$ --- какое-то число, $e^(lambda x) != 0$.
+
+Вычисляем
+
+$
+  y'(x) = lambda e^(lambda x)
+$
+
+$
+  y''(x) = lambda^2 e^(lambda x)
+$
+
+$ ... $
+
+$
+  y^((n))(x) = lambda^n e^(lambda x)
+$
+
+Подставляем в @euler_method_1:
+
+$
+  lambda^n e^(lambda x) + a_1 lambda^(n - 1) e^(lambda x) + ... + a_n e^(lambda x) equiv 0
+$
+
+$
+  lambda^n + a_1 lambda^(n - 1) + ... + a_(n - 1) lambda + a_n = 0
+$ <euler_method_2>
+
+==== Вывод:
+
+$y = e^(lambda x)$ является решением уравнения @euler_method_1 $<==>$ $lambda$ --- корень уравнения @euler_method_2.
+
+==== Определение
+
+Алгебраическое уравнение @euler_method_2 называется характеристическим уравнением для @euler_method_1.
+
+По основной теореме алгебры у уравнения @euler_method_2 корней будет не больше $n$.
+
+==== Случай простых корней
+
+Предположим, что @euler_method_2 имеет $n$ попарно различных корней $lambda_1, lambda_2, ..., lambda_n$.
+
+В этом случае мы имеем $n$ решений уравнения @euler_method_1:
+
+$
+  y_1 (x) = e^(lambda_1 x), y_2 (x) = e^(lambda_2 x), ..., y_n (x) = e^(lambda_n x).
+$
+
+==== Лемма 1
+
+$y_1 (x) = e^(lambda_1 x), ..., y_m (x) = e^(lambda_m x)$ линейно независимы на произвольном отрезке $[a, b]$, если $lambda_j != lambda_k$, $j != k$, $m in NN$.
+
+===== Доказательство
+
+По индукции относительно $m$:
+
+Случай $m = 1$:
+
+$a e^(lambda_1 x) equiv 0 <==> a = 0$.
+
+Следовательно, ${e^(lambda_1 x)}$ линейно независимо.
+
+Предположим, что $e^(lambda_1 x), ..., e^(lambda_m x)$ линейно независимы.
+
+Пусть $lambda_(m + 1) != lambda_j$, $1 <= j <= m$.
+
+Докажем, что $e^(lambda_i x), ..., e^(lambda_m x), e^(lambda_(m + 1) x)$ линейно независимы на $[a, b]$.
+
+Предположим противное:
+
+$exists r_1, ..., r_(m + 1)$ --- числа, не все равные нулю.
+
+$
+  r_1 e^(lambda_1 x) + ... + r_(m + 1) e^(lambda_(m + 1) x) equiv 0, space r_(m + 1) != 0
+$ <euler_method_3>
+
+Поделим на $e^(lambda_(m + 1) x)$:
+
+$
+  r_1 e^((lambda_1 - lambda_(m + 1)) x) + ... + r_m e^((lambda_m - lambda_(m + 1)) x) + r_m equiv 0
+$
+
+$
+  r_1 e^(tilde(lambda_1) x) + ... + r_m e^(tilde(lambda_m) x) + r_m equiv 0, space tilde(lambda_j) = lambda_j - lambda_(m + 1)
+$
+
+$
+  r_1 tilde(lambda_1) e^(tilde(lambda_1) x) + ... + r_m tilde(lambda_m) e^(tilde(lambda_m) x) equiv 0, space tilde(lambda_1) != 0, ..., tilde(lambda_m) != 0
+$
+
+Следовательно, по предположению индукции, $r_1 tilde(lambda_1) = 0, ..., r_m tilde(lambda_m) = 0 ==> r_1 = 0, r_2 = 0, ..., r_m = 0$.
+
+Теперь из @euler_method_3
+
+$
+  r_(m + 1) e^(lambda_(m + 1) x) equiv 0 ==> r_(m + 1) = 0
+$
+
+Противоречие.
+
+Таким образом, $e^(lambda_1 x), ..., e^(lambda_(m + 1) x)$ линейно независимы.
+
+==== Итог
+
+Если $lambda_1, ..., lambda_n$ --- попарно различные корни характеристического уравнения, то $y_1 (x) = e^(lambda_1 x), ..., y_n (x) = e^(lambda_n x)$ --- фундаментальная система решений уравнения @euler_method_1.
+
+По теореме 6 общее решение @euler_method_1 имеет вид
+
+$
+  y = c_1 e^(lambda_1 x) + c_2 e^(lambda_2 x) + ... + c_n e^(lambda_n x)
+$
+
+==== Общий случай
+
+Рассмотрим уравнение @euler_method_1. @euler_method_2_2 --- его характеристическое уравнение.
+
+$
+  lambda^n + a_1 lambda^(n - 1) + ... + a_(n - 1) lambda + a_n = 0
+$ <euler_method_2_2>
+
+Пусть $lambda_1$ --- корень кратности $k_1$, $lambda_2$ --- корень кратности $k_2$, ..., $lambda_m$ --- корень кратности $k_m$, $m <= n$, $k_1 + ... + k_m = n$.
+
+Из алгебры
+
+$
+  (lambda - lambda_1)^(k_1) dot (lambda - lambda_2)^(k_2) dot ... dot (lambda - lambda_m)^(k_m) = 0
+$
+
+Корень $lambda_1$ даёт следующие частные решения уравнения @euler_method_1:
+
+$
+  underbrace(e^(lambda_1 x)\, x e^(lambda_1 x)\, x^2 e^(lambda_1 x)\, ...\, x^(k_1 - 1) e^(lambda_1 x), k_1 "решений")
+$
+
+$lambda_2$ даёт решения
+
+$
+  underbrace(e^(lambda_2 x)\, x e^(lambda_2 x)\, x^2 e^(lambda_2 x)\, ...\, x^(k_2 - 1) e^(lambda_2 x), k_2 "решений")
+$
+
+И так далее...
+
+$lambda_m$ даёт решения
+
+$
+  underbrace(e^(lambda_m x)\, x e^(lambda_m x)\, x^2 e^(lambda_m x)\, ...\, x^(k_m - 1) e^(lambda_m x), k_m "решений")
+$
+
+Всего будет $k_1 + k_2 + ... + k_m = n$ решений уравнения @euler_method_1.
+
+Таким образом находится фундаментальная система решений $phi_1 (x), ..., phi_n (x)$
+
+Общее решение:
+
+$
+  y = c_1 phi_1 (x) + ... + c_n phi_n (x)
+$
