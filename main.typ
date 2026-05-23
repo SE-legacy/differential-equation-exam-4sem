@@ -1,3 +1,10 @@
+#show heading: it => {
+  if (it.level < 4) {
+    counter(math.equation).update(0)
+  }
+  it
+}
+
 #show math.equation: it => {
   if it.has("label") {
     math.equation(numbering: "(1)", block: true, it.body)
@@ -180,11 +187,11 @@ $exists alpha_1,...,alpha_n$ --- не все равные 0, т.ч. $alpha_1 phi
 
 == Линейные системы ДУ: определения и формулировки
 
-#include("questions/linear-systems-of-equations/definitions.typ")
+#include "questions/linear-systems-of-equations/definitions.typ"
 
 == Линейные системы ДУ: теоремы
 
-#include("questions/linear-systems-of-equations/theorems_and_algorithms.typ")
+#include "questions/linear-systems-of-equations/theorems_and_algorithms.typ"
 
 ==== 6) Существование ФСР (т.5)
 // TODO перевести фото в электронный вид, определение 4.6
@@ -238,7 +245,7 @@ $exists alpha_1,...,alpha_n$ --- не все равные 0, т.ч. $alpha_1 phi
 
 $Y (x) = mat(y_1 (x); y_2 (x); ...; y_n (x))$, $F (x) = mat(f_1 (x); f_2 (x); ...; f_n (x))$,
 
-$A(x) = mat(a_11 (x), a_12 (x), ..., a_(1 n) (x); a_21 (x), a_22 (x), ..., a_(2 n) (x); ..., ..., ..., ...; a_(n 1) (x), a_(n 2) (x), ..., a_(n n) (x)) " – матрица системы"$
+$A(x) = mat(a_11 (x), a_12 (x), ..., a_(1 n) (x); a_21 (x), a_22 (x), ..., a_(2 n) (x); ..., ..., ..., ...; a_(n 1) (x), a_(n 2) (x), ..., a_(n n) (x)) #[ –-- матрица системы]$
 
 $A(x) Y(x) = mat(a_11 (x) y_1 (x)+a_12 (x) y_2 (x)+...+a_(1 n) (x) y_n (x); a_21 (x) y_1 (x)+a_22 (x) y_2 (x)+...+a_(2 n) (x) y_n (x); ...; a_(n 1) (x) y_1 (x)+a_(n 2) (x) y_2 (x)+...+a_(n n) (x) y_n (x))$
 
@@ -246,7 +253,7 @@ $A(x) Y(x) + F(x) = mat(a_11 (x) y_1 (x)+...+a_(1 n) (x) y_n (x) + f_1 (x); ...;
 
 $Y^' (x) = mat(y_1^' (x); y_2^' (x); ...; y_n^' (x))$
 
-$(1) <=> Y^' = A(x)Y + F(x)$
+$#ref(<eq:lin_system_normal_linear_system>) <==> Y^' = A(x)Y + F(x)$
 
 Однородная система: \ $Y^' = A(x)Y$
 
