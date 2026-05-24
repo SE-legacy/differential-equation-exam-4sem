@@ -71,7 +71,7 @@ $ y(x) = e^(- integral p(x) d x) ( integral e^(integral p(x) d x) q(x) d x + c) 
 Докажем, что @lin_solution при любом $x$ дает решение уравнения @lin_eq. Подставим @lin_solution в @lin_eq:
 
 $
-  e^( - integral p(x) d x) (- p(x) d x) (integral e^(integral p(x) d x) q(x) d x + c) + \ + underbrace(e^(- integral p(x) d x) e^(integral p(x) d x), 1) q(x) +p(x) e^(- integral p(x) d x) (integral e^(integral p(x) d x) q(x) d x + c) = q(x)
+  e^( - integral p(x) d x) (- p(x)) (integral e^(integral p(x) d x) q(x) d x + c) + \ + underbrace(e^(- integral p(x) d x) e^(integral p(x) d x), 1) q(x) +p(x) e^(- integral p(x) d x) (integral e^(integral p(x) d x) q(x) d x + c) = q(x)
 $
 
 Таким образом @lin_solution дает решение при любом $c$
