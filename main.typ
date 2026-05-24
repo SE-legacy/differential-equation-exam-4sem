@@ -1,3 +1,5 @@
+#import "conf.typ": generate_title, make_toc
+
 #set text(lang: "ru")
 
 #show heading: it => {
@@ -25,16 +27,19 @@
   }
 }
 
-#outline(depth: 3)
+#generate_title()
 
-= Методические материалы для подготовки к зачёту по дисциплине "Дифференциальные уравнения"
+#make_toc()
 
-== Сокращения
+#show heading.where(level: 1): set heading(numbering: (.., last) => { str(last) + "." })
+#show heading.where(level: 3): set heading(numbering: (.., last) => { str(last) + "." })
+
+#heading(numbering: none)[Сокращения]
 
 - ДУ --- дифференциальные уравнения
 - ФСР --- фундаментальная система решений
 
-= 1. Уравнения I-го порядка
+= Уравнения I-го порядка
 
 == Уравнения I-го порядка: определения и формулировки
 
@@ -44,7 +49,7 @@
 
 #include "questions/first_order_equations/theorems_and_algorithms.typ"
 
-= 2. Линейные ДУ $n$-го порядка
+= Линейные ДУ $n$-го порядка
 
 == Линейные ДУ $n$-го порядка: определения и формулировки
 
@@ -54,11 +59,11 @@
 
 #include "questions/linear_nth_order_equations/theorems_and_algorithms.typ"
 
-= 3. Линейные уравнения II-го порядка
+= Линейные уравнения II-го порядка
 
 #include "questions/second_order_equations/theorems_and_algorithms.typ"
 
-= 4. Линейные системы ДУ
+= Линейные системы ДУ
 
 == Линейные системы ДУ: определения и формулировки
 
@@ -72,9 +77,8 @@
 
 == Приложение 1
 
-#h(0.5cm)
-
 === Пояснение к 4.1
+
 *Векторная запись линейных систем*
 
 Обозначим:
