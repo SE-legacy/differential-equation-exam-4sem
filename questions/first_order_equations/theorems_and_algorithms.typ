@@ -128,7 +128,7 @@ _Считаем, что $y = y(x), space N(x, y) != 0$_
   где $C(y)$ --- пока неизвестная функция.
 
 + Подставляем $Phi(x, y)$ во второе уравнение системы:
-  $ partial / (partial y) (limits(integral)_(x_0)^x M(t, y) d t + d y) = N(x, y) $
+  $ partial / (partial y) (limits(integral)_(x_0)^x M(t, y) d t + C(y)) = N(x, y) $
   $ limits(integral)_(x_0)^x (partial M(t, y)) / (partial y) d t + C'(y) = N(x, y) $
   $ limits(integral)_(x_0)^x (partial N(t, y)) / (partial t) d t + C'(y) = N(x, y) $
   $
