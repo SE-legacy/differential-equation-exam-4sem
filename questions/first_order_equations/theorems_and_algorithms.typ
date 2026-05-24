@@ -29,7 +29,8 @@ $ integral f(x) d x = F(x), $ где $F(x)$ --- любая фиксирован�
 $
   G(y) = F(x) + C,
 $
-C --- произвольная константа.
+
+$C$ --- произвольная константа.
 
 5. Находим из уравнения $y = phi(x, C)$.
 
@@ -45,11 +46,11 @@ C --- произвольная константа.
 
 По построению:
 $
-  G(phi(x, C_0)) eq.triple F(x) + C_0\
-  d/(d x) G(phi(x, C_0)) eq.triple d/(d x) F(x)\
-  G'(phi(x, C_0)) dot phi'(x, C_0) eq.triple F'(x)\
-  1/g(phi(x, C_0)) dot phi'(x, C_0) eq.triple f(x)\
-  phi'(x, C_0) eq.triple f(x) g(phi(x, C_0))
+  G(phi(x, C_0)) equiv F(x) + C_0\
+  d/(d x) G(phi(x, C_0)) equiv d/(d x) F(x)\
+  G'(phi(x, C_0)) dot phi'(x, C_0) equiv F'(x)\
+  1/g(phi(x, C_0)) dot phi'(x, C_0) equiv f(x)\
+  phi'(x, C_0) equiv f(x) g(phi(x, C_0))
 $
 
 Значит $phi(x, C_0)$ --- решение @eq:partial_variables.
@@ -59,7 +60,7 @@ $
 
 Запишем линейное ДУ 1-го порядка в виде
 $ y' + p(x) y = q(x) $ <lin_eq>
-где $p(x) = (a_1(x)) / (a_0(x))$, $q(x) = f(x) / a_0(x)$
+где $p(x) = (b(x)) / (a(x))$, $q(x) = f(x) / a(x)$
 
 Общее решение данного уравнения находится по формуле:
 $ y(x) = e^(- integral p(x) d x) ( integral e^(integral p(x) d x) q(x) d x + c) $ <lin_solution>
@@ -81,7 +82,7 @@ $
 
 $ y'(x) + p(x) y = q(x) $<lin_eq_var>
 
-+ Решим соответствующее ему однородное уравнение $y' + p(x) y = 0$ --- с разделяющимися. $y_0 = c e^(-p(x))$ --- общее решение.
++ Решим соответствующее ему однородное уравнение $y' + p(x) y = 0$ --- с разделяющимися переменными. $y_0 = c e^(-p(x))$ --- общее решение.
 + Ищем решение уравнения @lin_eq_var в виде
 
   $ y = C(x) e^(- p(x)), $<lin_eq_var_solution_c>
@@ -95,7 +96,7 @@ $ y'(x) + p(x) y = q(x) $<lin_eq_var>
   $
     C'(x) e^(-p(x)) - C(x)p(x) e^(-p(x)) + C(x)p(x) e^(-p(x)) = q(x) \
     C'(x) e^(-p(x)) = q(x) \
-    C'(x) = integral e^(p(x)) q(x) + c
+    C(x) = integral e^(p(x)) q(x) + c
   $
 
 + Подставляем в @lin_eq_var_solution_c
@@ -108,9 +109,9 @@ _Рассмотрим симметричную форму ДУ:_
 $ M(x, y) d x + N(x, y) d y = 0 $ <full_differentials_1>
 
 _Уравнение является ДУ в полных дифференциалах, если_
-$ (partial M(x, y)) / (partial y) = (partial N(x, y)) / (partial x) $
+$ space.quad (partial M(x, y)) / (partial y) equiv (partial N(x, y)) / (partial x) $
 
-_Считаем, что $y = y(x)$, $N(x, y) != 0$_
+_Считаем, что $y = y(x), space N(x, y) != 0$_
 
 *Алгоритм:*
 + Найдём вспомогательную функцию $Phi(x, y)$ как решение следующей системы:
@@ -129,15 +130,15 @@ _Считаем, что $y = y(x)$, $N(x, y) != 0$_
 + Подставляем $Phi(x, y)$ во второе уравнение системы:
   $ partial / (partial y) (limits(integral)_(x_0)^x M(t, y) d t + d y) = N(x, y) $
   $ limits(integral)_(x_0)^x (partial M(t, y)) / (partial y) d t + C'(y) = N(x, y) $
-  $ limits(integral)_(x_0)^x (partial N(x, y)) / (partial t) d t + C'(y) = N(x, y) $
+  $ limits(integral)_(x_0)^x (partial N(t, y)) / (partial t) d t + C'(y) = N(x, y) $
   $
     cancel(N(x, y)) - N(x_0, y) + C'(y) = cancel(N(x, y)) \
-    C'(y) = N(x_0, y) => C(y) = integral N(x_0, y) d y => \
-    Phi(x, y) = limits(integral)_(x_0)^x M(t, y) d t + integral N(x_0, y) d y
+    C'(y) = N(x_0, y) ==> C(y) = integral N(x_0, y) d y ==> \
+    ==> Phi(x, y) = limits(integral)_(x_0)^x M(t, y) d t + integral N(x_0, y) d y
   $
 + Рассмотрим уравнение относительно $y$:
   $ Phi(x, y) = C, space C #[--- произвольная постоянная] $ <overall_solution_full_partial>
-+ Решаем @overall_solution_full_partial относительно $y$ и находим общее решение $ y = Phi(x, c) $
++ Решаем @overall_solution_full_partial относительно $y$ и находим общее решение $ y = phi(x, c) $
 
 #underline[Замечание:] Найти $y$ в явном виде возможно не всегда. В таком случае записывается общее решение в неявном виде, коим является @overall_solution_full_partial
 
@@ -148,15 +149,15 @@ _Считаем, что $y = y(x)$, $N(x, y) != 0$_
 В этом случае @full_differentials_1 эквивалентно уравнению
 
 $
-  (d y)/(d x) = - (M(x, y))/(N(x, y))
+  (d y)/(d x) = - (M(x, y))/(N(x, y)).
 $ <full_differentials_2>
 
+По построению (см. пункт 5)
+
 $
-  Phi(x, phi(x, c)) equiv C
+  Phi(x, phi(x, c)) equiv C.
 $
 <full_differentials_3>
-
-по построению (см. пункт 5)
 
 Другими словами, $phi(x, C)$ --- неявная функция, определяющая уравнение из пункта 4.
 Она определяется однозначно, так как $(partial Phi)/(partial y) = N(x, y) != 0$ (см. теорему о неявной функции). Продифференцируем обе части уравнения @full_differentials_3 и получим
@@ -167,7 +168,7 @@ $
   phi'(x, C) equiv - (M(x, phi(x, C)))/(N(x, phi(x, C))).
 $
 
-Тогда $phi(x, C)$ --- решение @full_differentials_2, т.е $phi(x, C)$ --- решение @full_differentials_1 $forall C$.
+Тогда $phi(x, C)$ --- решение @full_differentials_2, т.е $phi(x, C)$ --- решение @full_differentials_1 при любом $C$.
 
 === Основная теорема существования и единственности (1--3 этапы)
 
@@ -178,7 +179,7 @@ $
 ==== Доказательство:
 
 *Этап 1: Сведение задачи Коши к интегральному уравнению*
-Пусть $y = phi(x)$ --- решение задачи Коши: $phi'(x) equiv f(x, phi(x))$ или $phi'(t) equiv f(t, phi(t))$
+Пусть $y = phi(x)$ --- решение задачи Коши: $phi'(x) equiv f(x, phi(x))$. Переобозначим: $phi'(t) equiv f(t, phi(t))$.
 
 Продифференцируем от $x_0$ до $x$ по $t$, $x$ --- фиксированная точка из $[a, b]$:
 
@@ -221,7 +222,7 @@ $ phi(x) = y_0 + limits(integral)_(x_0)^x f(t, phi(t)) d t $
 
 Следовательно в пределе получаем:
 
-$phi(x) equiv y_0 + limits(integral)_(x_0)^x f(t, phi(t)) d t =>$ решение $phi(x)$ --- решение @eq_2_13_2.
+$phi(x) equiv y_0 + limits(integral)_(x_0)^x f(t, phi(t)) d t ==>$ решение $phi(x)$ --- решение @eq_2_13_2.
 
 *Этап 3: Доказательство единственности решения*
 
@@ -263,4 +264,4 @@ $ forall x u(x) <= m (M^4 (x - x_0)^n) / (2 dot 3 dot 4 dot ... dot n) = m (M (x
 
 Факториал растёт быстрее степени, поэтому $limits(lim)_(n -> infinity) m (M (x - x_0))^n / (n!) = 0$
 
-$ 0 <= u(x) <= 0 => u(x) equiv 0 => phi(x) - phi_1(x) equiv 0 => phi(x) $ --- единственное решение.
+$ 0 <= u(x) <= 0 ==> u(x) equiv 0 ==> phi(x) - phi_1(x) equiv 0 ==> phi(x) $ --- единственное решение.
