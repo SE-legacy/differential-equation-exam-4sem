@@ -82,25 +82,25 @@ $
 
 $ y'(x) + p(x) y = q(x) $<lin_eq_var>
 
-+ Решим соответствующее ему однородное уравнение $y' + p(x) y = 0$ --- с разделяющимися переменными. $y_0 = c e^(-p(x))$ --- общее решение.
++ Решим соответствующее ему однородное уравнение $y' + p(x) y = 0$ --- с разделяющимися переменными. $y_0 = c e^(-P(x))$ --- общее решение, $P(x) = integral p(x) d x$.
 + Ищем решение уравнения @lin_eq_var в виде
 
-  $ y = C(x) e^(- p(x)), $<lin_eq_var_solution_c>
+  $ y = c(x) e^(-P(x)), $<lin_eq_var_solution_c>
 
-  где $C(x)$ --- пока неизвестная функция.
+  где $c(x)$ --- пока неизвестная функция.
 
-  $ y' = C'(x) e^(-p(x)) + C(x) e^(-p(x)) dot (-p'(x)) = C'(x) e^(-p(x)) - C(x) e^(-p(x)) p(x) $
+  $ y' = c'(x) e^(-P(x)) + c(x) e^(-P(x)) dot (-P(x))' = c'(x) e^(-P(x)) - c(x) e^(-P(x)) p(x) $
 
   Подставляем в @lin_eq_var:
 
   $
-    C'(x) e^(-p(x)) - C(x)p(x) e^(-p(x)) + C(x)p(x) e^(-p(x)) = q(x) \
-    C'(x) e^(-p(x)) = q(x) \
-    C(x) = integral e^(p(x)) q(x) + c
+    c'(x) e^(-P(x)) - c(x)p(x) e^(-P(x)) + c(x)p(x) e^(-P(x)) = q(x) \
+    c'(x) e^(-P(x)) = q(x) \
+    c(x) = integral e^(P(x)) q(x) + "const"
   $
 
 + Подставляем в @lin_eq_var_solution_c
-  $ y(x) = e^(-p(x))(integral e^p(x) q(x) d x + c) $
+  $ y(x) = e^(-P(x))(integral e^P(x) q(x) d x + "const") $
 
 === Алгоритм решения ДУ в полных дифференциалах и его обоснование
 
