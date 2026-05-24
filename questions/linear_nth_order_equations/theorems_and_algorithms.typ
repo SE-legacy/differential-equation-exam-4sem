@@ -380,7 +380,7 @@ $
     phi_1^'(x), dots.h, phi_n^'(x);
     dots.v, dots.down, dots.v;
     phi_1^((n-1))(x), dots.h, phi_n^((n-1))(x)
-  ) = W(x) limits(!=)^script("По Т. 4") 0
+  ) = W(x) limits(!=)^script("По теореме 4") 0
 $
 
 По теореме из алгебры @variation_method_4 имеет единственное решение.
@@ -486,9 +486,9 @@ $
   W(x) = mat(delim: "|", phi_1 (x), phi_2 (x); phi'_1 (x), phi'_2 (x)) = mat(delim: "|", cos omega x, sin omega x; - omega sin omega x, omega cos omega x) = omega cos^2 omega x + omega sin^2 omega x = omega != 0
 $
 
-$W(x) != 0 ==>$ по Т.2 $phi_1 (x), phi_2 (x)$ линейно независимы на $[a, b]$, то есть образуют ф.с.р.
+$W(x) != 0 ==>$ по теореме 2 $phi_1 (x), phi_2 (x)$ линейно независимы на $[a, b]$, то есть образуют ф.с.р.
 
-По Т.6 общее решение уравнения @variation_method_example_2 имеет вид
+По теореме 6 общее решение уравнения @variation_method_example_2 имеет вид
 
 $
   y_0 (x) = c_1 cos omega x + c_2 sin omega x
@@ -540,7 +540,7 @@ $
   y_"ч" (x) = cos omega x dot (-1/omega) limits(integral)_(x_0)^(x) f(t) sin omega t d t + sin omega x dot 1/omega limits(integral)_(x_0)^(x) f(t) cos omega t d t = \ = 1/omega limits(integral)_(x_0)^(x) (-cos omega x sin omega t + sin omega x cos omega t) f(t) d t = 1/omega limits(integral)_(x_0)^(x) sin omega (x - t) dot f(t) d t
 $
 
-По Т.7 общее решение @variation_method_example_1 имеет вид
+По теореме 7 общее решение @variation_method_example_1 имеет вид
 
 $
   y = c_1 cos omega x + c_2 sin omega x + 1/omega limits(integral)_(x_0)^(x) f(t) sin omega (x - t) d t, space x_0 in [a, b]
