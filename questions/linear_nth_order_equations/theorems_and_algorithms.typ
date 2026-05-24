@@ -362,7 +362,9 @@ $
   )
 $ <variation_method_4>
 
-Фиксируем $x in [a, b]$. Определитель этой системы:
+Фиксируем $x in [a, b]$.
+
+Определитель этой системы:
 
 #set math.mat(delim: "|")
 $
@@ -410,7 +412,9 @@ $
   y'' + a_1 (x) y' + a_2 (x) y = 0
 $ <variation_method_proof_2>
 
-$phi_1 (x), phi_2 (x)$ --- ФСР. Ищем $y_"ч"$ в виде
+$phi_1 (x), phi_2 (x)$ --- ФСР.
+
+Ищем $y_"ч"$ в виде
 
 $
   y_"ч" (x) = C_1 (x) phi_1 (x) + C_2 (x) phi_2 (x),
@@ -701,9 +705,7 @@ $
 
 ==== Общий случай
 
-Рассмотрим уравнение @euler_method_1.
-
-@euler_method_2_2 --- его характеристическое уравнение.
+Рассмотрим уравнение @euler_method_1. @euler_method_2_2 --- его характеристическое уравнение.
 
 $
   lambda^n + a_1 lambda^(n - 1) + ... + a_(n - 1) lambda + a_n = 0
@@ -729,7 +731,9 @@ $
   underbrace(e^(lambda_2 x)\, space x e^(lambda_2 x)\, space x^2 e^(lambda_2 x)\, space ...\, space x^(k_2 - 1) e^(lambda_2 x), k_2 "решений")
 $
 
-И так далее... $lambda_m$ даёт решения
+И так далее...
+
+$lambda_m$ даёт решения
 
 $
   underbrace(e^(lambda_m x)\, space x e^(lambda_m x)\, space x^2 e^(lambda_m x)\, space ...\, space x^(k_m - 1) e^(lambda_m x), k_m "решений")
