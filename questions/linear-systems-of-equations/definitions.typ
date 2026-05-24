@@ -22,7 +22,7 @@ _Иными словами, нормальная система --- это ко�
 
 2. *Решение системы*
 
-Частным решением системы @eq:lin_system_normal_linear_system называется набор функций $phi_1 (x),...,phi_n (x)$, т.ч. $ phi_j^' (x) equiv sum_(k=1)^n a_(j k) (x) phi_k (x) + f_j (x), "  " j=1,...,n $
+Частным решением системы @eq:lin_system_normal_linear_system называется набор функций $phi_1 ,...,phi_n$, т.ч. $ phi_j^' equiv sum_(k=1)^n a_(j k) phi_k + f_j , "  " j=1,...,n $
 
 3. *Задача Коши для системы*
 
