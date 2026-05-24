@@ -31,6 +31,8 @@
 
 #make_toc()
 
+#set page(numbering: "1")
+
 #show heading.where(level: 1): set heading(numbering: (.., last) => { str(last) + "." })
 #show heading.where(level: 3): set heading(numbering: (.., last) => { str(last) + "." })
 
