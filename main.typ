@@ -1,3 +1,5 @@
+#set text(lang: "ru")
+
 #show heading: it => {
   if (it.level < 4) {
     counter(math.equation).update(0)
@@ -23,7 +25,7 @@
   }
 }
 
-#outline()
+#outline(depth: 3)
 
 = Методические материалы для подготовки к зачёту по дисциплине "Дифференциальные уравнения"
 

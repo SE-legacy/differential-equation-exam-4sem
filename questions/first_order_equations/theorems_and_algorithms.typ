@@ -244,7 +244,7 @@ $ abs(phi(x) - phi_1(x)) = abs(limits(integral)_(x_0)^x (partial f(t, xi(t))) / 
 Предположим, для определенности, что $x_0 <= x <= b$, тогда вспомним, что $abs(limits(integral)_(x_0)^b F(x)) <= limits(integral)_(x_0)^b abs(F(x))$. Получим:
 
 $
-  abs(phi(x) - phi_1(x)) = limits(integral)_(x_0)^x underbrace(abs((partial f(t, xi(t))) / (partial y)), <= M --- "const") abs((phi(t) - phi_1(t))) d t
+  abs(phi(x) - phi_1(x)) = limits(integral)_(x_0)^x underbrace(abs((partial f(t, xi(t))) / (partial y)), <= M = "const") abs((phi(t) - phi_1(t))) d t
 $
 
 $ u(x) <= M limits(integral)_(x_0)^x underbrace(u(t), <= m) d t $
