@@ -122,7 +122,10 @@ _Считаем, что $y = y(x)$, $N(x, y) != 0$_
   $
 + Рассмотрим 1-е уравнение системы. Фиксируем $y$, получаем:
   $ (partial Phi(x, y)) / (partial x) = M(x, y) $
-  $ Phi(x, y) = integral M(x, y) d x = limits(integral)_(x_0)^x M(t, y) d t + C(y) $
+  $ Phi(x, y) = integral M(x, y) d x = limits(integral)_(x_0)^x M(t, y) d t + C(y), $
+
+  где $C(y)$ --- пока неизвестная функция.
+
 + Подставляем $Phi(x, y)$ во второе уравнение системы:
   $ partial / (partial y) (limits(integral)_(x_0)^x M(t, y) d t + d y) = N(x, y) $
   $ limits(integral)_(x_0)^x (partial M(t, y)) / (partial y) d t + C'(y) = N(x, y) $
@@ -133,7 +136,7 @@ _Считаем, что $y = y(x)$, $N(x, y) != 0$_
     Phi(x, y) = limits(integral)_(x_0)^x M(t, y) d t + integral N(x_0, y) d y
   $
 + Рассмотрим уравнение относительно $y$:
-  $ Phi(x, y) = C, space C in RR $ <overall_solution_full_partial>
+  $ Phi(x, y) = C, space C #[--- произвольная постоянная] $ <overall_solution_full_partial>
 + Решаем @overall_solution_full_partial относительно $y$ и находим общее решение $ y = Phi(x, c) $
 
 #underline[Замечание:] Найти $y$ в явном виде возможно не всегда. В таком случае записывается общее решение в неявном виде, коим является @overall_solution_full_partial
@@ -156,7 +159,7 @@ $
 по построению (см. пункт 5)
 
 Другими словами, $phi(x, C)$ --- неявная функция, определяющая уравнение из пункта 4.
-Она определяется однозначно, так как $(partial Phi)/(partial y) = N(x, y) != 0$ (см Т. о неявной функции)
+Она определяется однозначно, так как $(partial Phi)/(partial y) = N(x, y) != 0$ (см Т. о неявной функции). Продифференцируем обе части уравнения @full_differentials_3 и получим
 
 $
   (partial Phi(x, phi(x, C)))/(partial x) + (partial Phi(x, phi(x, C)))/(partial y) dot (d phi(x, C))/(d x) equiv 0\
@@ -180,7 +183,9 @@ $
 Продифференцируем от $x_0$ до $x$ по $t$, $x$ --- фиксированная точка из $[a, b]$:
 
 $
-  phi(x) - underbrace(phi(x_0), y_0) = limits(integral)_(x_0)^x f(t, phi(t)) d t \
+  phi(x) - underbrace(phi(x_0), y_0) = limits(integral)_(x_0)^x f(t, phi(t)) d t
+$
+$
   phi(x) equiv y_0 + limits(integral)_(x_0)^x f(t, phi(t)) d t
 $ <eq_2_13_1>
 
@@ -188,7 +193,7 @@ $ <eq_2_13_1>
 
 $ y(x) = y_0 + limits(integral)_(x_0)^x f(t, y(t)) d t, space a <= x <= b $ <eq_2_13_2>
 
-Вывод: любое решение задачи Коши является решением @eq_2_13_2.
+Вывод: любое решение задачи Коши является решением @eq_2_13_2. Верно и обратное. Таким образом, задача Коши эквивалентна уравнению @eq_2_13_2.
 
 *2 этап: Доказательство существования решения @eq_2_13_2*
 
