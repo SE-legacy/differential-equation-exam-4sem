@@ -27,7 +27,7 @@ $forall alpha in CC space.fig forall z_1 (x)$, $z_2 (x) in C^n$ выполняю
 Легко показать, что $forall z_1 (x), ..., z_m (x) in C^m space.fig forall alpha_1, ..., alpha_m in CC$:
 
 $
-  l(limits(sum)^(k=1)_m alpha_k z_k (x)) = limits(sum)_(k=1)^m alpha_k l(z_k (x))
+  l(limits(sum)_(k=1)^m alpha_k z_k (x)) = limits(sum)_(k=1)^m alpha_k l(z_k (x))
 $
 
 ==== Следствие
@@ -84,11 +84,17 @@ $ <linear_theorem_2>
 
 === Необходимое условие линейной независимости (теорема 4)
 
-Если $phi_1 (x), ..., phi_n (x)$ --- ФСР уравнения @linear_equations, то $W(x) != 0$ $forall x in [a, b]$.
+Если $phi_1 (x), ..., phi_n (x)$ --- ФСР уравнения
+
+$
+  y^((n)) + a_1 (x) y^((n-1)) + ... + a_n (x) y = f(x), a <= x <= b
+$ <linear_equations_theorem_4>
+
+то $W(x) != 0$ $forall x in [a, b]$.
 
 ==== Доказательство
 
-От противного. Пусть $phi_1 (x), ..., phi_n (x)$ --- ФСР.
+От противного. Пусть $phi_1 (x), ..., phi_n (x)$ --- ФСР @linear_equations_theorem_4.
 
 Предположим, что $exists x_0 in [a, b]$: $W(x_0) = 0 stretch(=>)^"по теореме"_"из алгебры"$ столбцы $W(x_0)$ линейно зависимы, значит $exists alpha_1, ..., alpha_n$ --- числа, не все равные 0, такие, что:
 
@@ -114,7 +120,7 @@ $
   )
 $
 
-Обозначим $phi(x) = limits(sum)_(k=1)^n alpha_n phi_n (x)$ --- решение @linear_equations (следствие из теоремы 1).
+Обозначим $phi(x) = limits(sum)_(k=1)^n alpha_n phi_n (x)$ --- решение @linear_equations_theorem_4 (следствие из теоремы 1).
 
 Рассмотрим $phi(x_0) = 0, space phi'(x_0) = 0, space ..., space phi^((n-1)) (x_0) = 0$.
 
